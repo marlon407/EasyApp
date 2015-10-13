@@ -1,0 +1,1 @@
+angular.module('sampleApp', ['ngRoute', 'appRoutes', 'UserCtrl', 'UserService', 'MainCtrl']);

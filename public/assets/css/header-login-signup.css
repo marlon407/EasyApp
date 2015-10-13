@@ -1,0 +1,10 @@
+.header-login-signup .header-limiter h1{
+	float: left;
+	font: normal 28px Cookie, Arial, Helvetica, sans-serif;
+	line-height: 40px;
+	margin: 0;
+}
+
+.top-bar .title-area h1 span {
+	color: #5383d3;
+}

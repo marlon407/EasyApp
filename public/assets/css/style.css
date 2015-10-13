@@ -1,0 +1,89 @@
+
+ul{
+	list-style: none;
+}
+
+.hero{
+	background-image: url("/Assets/images/hero3.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 80vh;
+	width: 100%;
+}
+.hero .info {
+	padding-top: 150px;	
+}
+
+.hero .info h1{
+	color: #fff;
+	font-family: 'PT Sans' !important;
+}
+
+.home .section{
+	min-height: 420px;
+	height: auto;
+}
+
+.home .section h1{
+	font-family: 'PT Sans' !important;
+	margin-top: 15px;
+	color: #575757;
+}
+
+.home .what-is .panel{
+	border-radius: 3px;
+}
+.home .what-is .panel img{
+	border: 2px solid;
+	padding: 11px;
+	border-radius: 30px;
+	margin-bottom: 5px;
+}
+
+.home .what-is .panel h5{
+	font-family: "PT Sans";
+	font-size: 22px;
+	color: #608c28;
+	font-weight: bold;
+	width: auto;
+	font-style: italic;
+}
+
+.home .break1{
+	background-image: url("/Assets/images/break2.jpg");
+}
+
+.home .break1 h1{
+	color: #fff;
+	font-family: "PT Sans";
+	padding-top: 160px;
+}
+
+.home .break1 h3{
+	color: #fff;
+	font-family: "PT Sans";
+}
+
+.home .what-you-can-do{
+	min-height: 300px;
+	height: auto;
+}
+
+.home .what-you-can-do h1{
+	font-family: "PT Sans";
+	margin-top: 15px;
+	color: #575757;
+}
+
+.home .what-you-can-do ul{
+	margin-top: 40px;
+}
+
+.home .what-you-can-do ul li img{
+	display: block;
+	margin: auto;
+}
+.home .what-you-can-do ul li span{
+	font-size: 20px;
+	color: #608c28;
+}

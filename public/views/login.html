@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="large-6 columns large-offset-3">
+		<h1 class="text-center"><span class="fa fa-sign-in"></span> Login</h1>
+		<!-- show any messages that come back with authentication -->
+		<div ng-show="{{message.length > 0}}" class="alert alert-danger">{{message}}</div>
+
+		<!-- LOGIN FORM -->
+		<div class="form-group">
+				<input type="text" class="form-control" placeholder="Nome do usuario" ng-model="user.name" name="email">
+		</div>
+		<div class="form-group">
+				<input type="password" placeholder="Senha" class="form-control" ng-model="user.password" name="password">
+		</div>
+	
+		<div class="text-center">
+			<button ng-click="login()" class="btn btn-warning btn-lg">Login</button>
+			<p>Need an account? <a href="/signup">Signup</a></p>
+			<p>Or go <a href="/">home</a>.</p>
+		</div>
+	</div>	
+</div>

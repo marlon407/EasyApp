@@ -1,0 +1,57 @@
+<html>
+  <head>
+  	<base href="/">
+    <title>EasyAd</title>
+		<link rel="stylesheet" href="/bower_components/foundation/css/foundation.css">
+		<link rel="stylesheet" href="/assets/css/style.css">
+
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="./bower_components/foundation/js/foundation.js"></script>
+    <script src="js/controllers/UserCtrl.js"></script>
+		<script src="js/services/UserService.js"></script>
+		<script src="js/controllers/MainCtrl.js"></script>
+		<script src="js/appRoutes.js"></script>
+		<script src="js/app.js"></script>
+  </head>
+  <body ng-app="sampleApp" ng-controller="MainController">
+
+  	<!-- HEADER -->
+	<nav class="top-bar" data-topbar role="navigation">
+		<ul class="title-area">
+			<li class="name">
+				<h1><a href="/">Easy AD</a></h1>
+			</li>
+			 <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+		</ul>
+
+		<section class="top-bar-section">
+			<!-- Right Nav Section -->
+			<ul ng-if="user == null || user.name == undefined" class="right">
+				<li class="divider"></li>
+				<li><a href="/signup">Registre-se</a></li>
+				<li class="divider"></li>
+				<li><a href="/login">Entrar</a></li>
+			</ul>
+			<ul ng-if="user.name != undefined" class="right">
+				<li><a ng-href="/{{user.name}}">{{user.name}}</a></li>
+				<li><a ng-click="logout()" href="">Log out</a></li>
+				
+			</ul>
+
+			<!-- Left Nav Section -->
+			<ul class="left">
+				<li><a href="#">Como Funciona</a></li>
+				<li><a href="#">Preços</a></li>
+				<li><a href="/designers">Designers</a></li>
+				<li><a href="#"></a></li>
+			</ul>
+		</section>
+	</nav>
+
+  	<!-- ANGULAR DYNAMIC CONTENT -->
+		<div ng-view></div>
+  </body>
+</html>
