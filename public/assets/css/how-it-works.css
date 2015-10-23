@@ -11,7 +11,7 @@
 	letter-spacing: 0px;
 	font-weight: 700;
 	font-style: normal;
-	color: #575757;
+	color: #608c28;
 }
 
 hr{
@@ -22,4 +22,56 @@ hr{
 	background-color: #bbb;
 	width: 100px;
 	height: 5px;
+}
+
+.how-it-works-page .arrow{
+	padding: 10px;
+}
+
+.how-it-works-page .arrow img{
+	margin: auto;
+	display: block;
+}
+
+.square-block{
+	margin: 0 auto 14px;
+	font-family: "PT Sans";
+	font-size: 18px;
+	line-height: 1.6em;
+	letter-spacing: 0px;
+	font-weight: 400;
+	font-style: normal;
+	color: #000;
+}
+
+.square-block-img .image-container{
+	display: block;
+	padding: 40px;
+}
+
+.square-block-img img{
+	width: 160px;
+	display: block;
+	margin: auto;
+}
+
+.square-block-content{
+	padding: 40px;
+	background-color: #f2f2f2;
+}
+
+.square-block-content h3{
+	color: #575757;
+	font-size: 28px;
+	line-height: 30px;
+	margin: 0 0 16px 0;
+	font-style: normal;
+	font-weight: bold;
+	text-align: center;
+}
+
+.square-block-content p{
+	line-height: 22px;
+	color: #000;
+	margin: 0;
 }
