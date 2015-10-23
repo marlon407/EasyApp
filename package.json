@@ -1,16 +1,16 @@
 {
   "name": "node-token-jwt",
   "main": "server.js",
-	"version": "1.0.0",
+	"version": "0.0.1",
   "dependencies": {
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "jsonwebtoken": "^5.4.0",
     "mongoose": "^4.1.10",
-    "morgan": "^1.6.1",
-		"bower": "^0.7.0"
+    "morgan": "^1.6.1"
   },
 	"scripts": {
-		"postinstall": "bower install"
+		"postinstall": "bower install",
+		"start": "node server.js"
 	}
 }
