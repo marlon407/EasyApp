@@ -1,0 +1,25 @@
+.how-it-works-page{}
+
+.how-it-works-page .header-info .info{
+	padding-top: 50px;
+}
+.how-it-works-page .header-info .info h1{
+	font-family: "PT Sans";
+	font-size: 52px;
+	line-height: 1.2em;
+	text-transform: none;
+	letter-spacing: 0px;
+	font-weight: 700;
+	font-style: normal;
+	color: #575757;
+}
+
+hr{
+	border-style: none;
+	border-width: 0;
+	margin: 33px auto 63px;
+	color: #bbb;
+	background-color: #bbb;
+	width: 100px;
+	height: 5px;
+}

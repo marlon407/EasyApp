@@ -15,10 +15,13 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider',
 			templateUrl: 'views/signup.html',
 			controller: 'UserController'
 		})
+		.when('/como-funciona',{
+			templateUrl: 'views/how-it-works.html',
+			controller: 'MainController'
+		})
 		.when('/:username', {
 			templateUrl: 'views/user.html',
 			controller: 'UserController'
 		});
-	$locationProvider.html5Mode(true);
-
+		$locationProvider.html5Mode(true);
 }]);
