@@ -7,7 +7,7 @@
     "jsonwebtoken": "^5.4.0",
     "mongoose": "^4.1.10",
     "morgan": "^1.6.1",
-		"bower": "0.7.0"
+		"bower": "^0.7.0"
   },
 	"scripts": {
 		"postinstall": "bower install"
