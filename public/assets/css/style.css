@@ -8,7 +8,7 @@ ul{
 }
 
 .hero{
-	background-image: url("/Assets/images/hero3.jpg");
+	background-image: url("/assets/images/hero3.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 80vh;
@@ -59,7 +59,7 @@ ul{
 }
 
 .home .break1{
-	background-image: url("/Assets/images/break2.jpg");
+	background-image: url("/assets/images/break2.jpg");
 }
 
 .home .break1 h1{
