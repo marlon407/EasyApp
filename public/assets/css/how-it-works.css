@@ -58,6 +58,7 @@ hr{
 .square-block-content{
 	padding: 40px;
 	background-color: #f2f2f2;
+	border: 1px solid #608c28;
 }
 
 .square-block-content h3{
