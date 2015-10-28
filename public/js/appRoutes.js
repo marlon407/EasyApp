@@ -19,6 +19,14 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider',
 			templateUrl: 'views/how-it-works.html',
 			controller: 'MainController'
 		})
+		.when('/designers', {
+			templateUrl: 'views/designers.html',
+			controller: 'MainController'
+		})
+		.when('/competicoes', {
+			templateUrl: 'views/competitions.html',
+			controller: 'MainController'
+		})
 		.when('/:username', {
 			templateUrl: 'views/user.html',
 			controller: 'UserController'

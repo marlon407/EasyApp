@@ -2,7 +2,6 @@ angular.module('MainCtrl', [])
 	.controller('MainController', ['$scope',  'User', '$window', '$routeParams', function($scope, User, $window, $routeParams) {
 		
 		$scope.user = {name:localStorage.getItem("username"), password:localStorage.getItem("password")}
-		
 		$scope.logout = function(){
 			localStorage.removeItem("username");
 			localStorage.removeItem("password");
@@ -15,4 +14,12 @@ angular.module('MainCtrl', [])
 				$scope.current_user = response.data.user;
 			});
 		}
+		
+		$scope.getDesigners = function(){
+			User.getAllDesigners().then(function(response){
+				console.log(response.data);
+				$scope.designers = response.data;
+			});
+		}
+		
 	}]);

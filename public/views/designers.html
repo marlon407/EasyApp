@@ -1,0 +1,37 @@
+
+<div class="designers" data-ng-controller="MainController" data-ng-init="getDesigners()">
+	<div class="section text-center header-info">
+		<div class="info">
+			<h1>Designers</h1>
+			<h3>Veja nossa comunidade de talentosos designers</h3>
+		</div>
+		<hr>
+	</div>
+		<div class="row bump">
+			<div ng-repeat="designer in designers">
+			 <div class="small-6 medium-4 large-4 columns">
+					<div class="row designer-panels">
+						 <div class="profile-card">
+								<div class="small-12 medium-4 large-4 columns">
+									 <a href="https://s3.amazonaws.com/uifaces/faces/twitter/BillSKenney/128.jpg">
+											<img src="https://s3.amazonaws.com/uifaces/faces/twitter/BillSKenney/128.jpg" alt="profile image"> </a>
+								</div>
+								<div class="small-12 medium-8 large-8 columns">
+									 <h4><a href="/{{designer.name}}">{{designer.name}} <span>President of XPTO</span></h4>
+									 <p><i class="fi-mail"></i><span> smtsmt@smt.com</span></p>
+									 <p><i class="fi-social-twitter"></i>@username</p>
+								</div>
+								<div class="row collapse">
+									 <ul class="button-group even-3">
+										 <li><a href="#" class="button"> <span class="desc">Seguindo</span> <span>0 </span></a></li>
+										 <li><a href="#" class="button"> <span class="desc">Seguidores</span> <span>0 </span></a></li>
+										 <li><a href="#" class="button"> <span class="desc">Projetos</span> <span>0 </span></a></li>
+									 </ul>
+								</div>
+						 </div>
+					</div>
+			 </div>
+		</div>
+
+	</div>
+</div>

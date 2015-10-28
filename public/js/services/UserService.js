@@ -31,6 +31,15 @@ angular.module('UserService', []).factory('User', ['$http', '$window', function(
 				 data: user
 			};
 			return $http(req);
+		},
+		
+		getAllDesigners: function(){
+			console.log("getting designres");
+			var req = {
+				method: "GET", 
+				url: "/getAllDesigners"
+			};
+			return $http(req);
 		}
 	}
 }]);

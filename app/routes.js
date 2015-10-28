@@ -16,7 +16,8 @@ module.exports = function(app, User) {
     var nick = new User({ 
       name: 'admin', 
       password: 'admin',
-      admin: true 
+      admin: true,
+			role: 0
     });
 
     // save the sample user
@@ -27,12 +28,20 @@ module.exports = function(app, User) {
     });
   });
 	
+	//Get all users designers
+	app.get('/getAllDesigners', function(req, res) {
+    User.find({role:0}, function(err, users) {
+      res.json(users);
+    });
+  });  
+	
 	app.post('/createUser', function(req, res) {
     // create a sample user
     var user = new User({ 
       name: req.body.name, 
       password: req.body.password,
-      admin: false
+      admin: false,
+			role: 0
     });
 
     // save the sample user

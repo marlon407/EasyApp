@@ -114,4 +114,65 @@ ul{
 	border-radius: 50px;
 }
 
+.read-more-link{
+	font-size: 18px;
+	color: #608c28;
+	font-weight: 700;
+  margin: 30px 0;
+	display: block;
+}
+
+.features {
+  text-align: center; }
+	.features h1{
+		font-family: "PT Sans";
+		margin-top: 15px;
+		color: #575757;}
+  .features hr {
+    width: 25%;
+    margin: 1rem auto; }
+  .features .round-icon {
+    background-color: #E87E04;
+    border-radius: 50%;
+    display: table;
+    height: 100px;
+    margin: -61px auto 1rem;
+    width: 100px;
+    font-size: 3rem; }
+    .features .round-icon span {
+      color: #fff;
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle; }
+  @media only screen and (max-width: 40em) {
+    .features .columns {
+      margin-bottom: 5rem; } }
+
+
+.footer {
+  background-color: #292c2f;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 3rem; }
+.footer p.slogan {
+	color: #608c28;
+	font-size: 1.8rem;
+	margin: 0 0 1rem; }
+.footer p.copywrite {
+	color: #8f9296;
+	font-size: 0.875rem;
+	margin: 0; }
+.footer .links a {
+	list-style: none;
+	font-weight: bold;
+	color: #ffffff;
+	padding: 3rem 0 2rem;
+	margin: 0; }
+	.footer .links a::after {
+		content: "•";
+		padding: 0 0.4rem 0 0.8rem; }
+	.footer .links a:last-child::after {
+		content: "";
+		padding: 0 0.4rem 0 0.8rem; }
+
 
