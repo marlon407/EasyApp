@@ -33,7 +33,7 @@ module.exports = function(app, User) {
     User.find({role:0}, function(err, users) {
       res.json(users);
     });
-  });  
+  });
 	
 	app.post('/createUser', function(req, res) {
     // create a sample user
@@ -149,7 +149,6 @@ module.exports = function(app, User) {
       res.json(users);
     });
   });   
-
   // apply the routes to our application with the prefix /api
   app.use('/api', apiRoutes);
 }

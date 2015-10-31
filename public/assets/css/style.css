@@ -97,23 +97,6 @@ ul{
 	color: #608c28;
 }
 
-.home .how-it-works ul li span{
-	font-size: 20px;
-	color: #608c28;
-}
-
-.home .how-it-works ul li img{
-	margin: auto;
-	margin-bottom: 5px;
-	display: block;
-}
-
-.home .how-it-works .info-container{
-	border: 2px solid;
-	padding: 11px;
-	border-radius: 50px;
-}
-
 .read-more-link{
 	font-size: 18px;
 	color: #608c28;
@@ -121,6 +104,36 @@ ul{
   margin: 30px 0;
 	display: block;
 }
+
+.where {
+  text-align: center; }
+	.where h1{
+		font-family: "PT Sans";
+		margin-top: 15px;
+		color: #575757;}
+  .where hr {
+    width: 25%;
+    margin: 1rem auto; }
+  .where .round-icon {
+    background-color: #E87E04;
+    border-radius: 50%;
+    display: table;
+    height: 80px;
+    margin: 20px auto 1rem;
+    width: 80px;
+    font-size: 3rem; }
+    .where .round-icon span {
+      color: #fff;
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle; }
+	.where h3{
+		font-family: "PT Sans";
+		font-size: 18px;
+	}
+  @media only screen and (max-width: 40em) {
+    .where .columns {
+      margin-bottom: 5rem; } }
 
 .features {
   text-align: center; }
@@ -174,5 +187,3 @@ ul{
 	.footer .links a:last-child::after {
 		content: "";
 		padding: 0 0.4rem 0 0.8rem; }
-
-

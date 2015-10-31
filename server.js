@@ -10,6 +10,7 @@ var mongoose    = require('mongoose');
 var jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var config = require('./config'); // get our config file
 var User   = require('./app/models/user'); // get our mongoose model
+var Contest   = require('./app/models/contest'); // get our mongoose model
     
 // =======================
 // configuration =========
@@ -32,7 +33,11 @@ app.use(morgan('dev'));
 // routes ================
 // =======================
 require('./app/routes.js')(app, User)
+require('./app/routes/contestRoutes.js')(app, Contest)
 
+app.use(function(req, res) {
+    res.sendfile(__dirname + '/public/index.html');
+});
 // =======================
 // start the server ======
 // =======================

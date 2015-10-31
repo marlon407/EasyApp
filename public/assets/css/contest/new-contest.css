@@ -1,0 +1,134 @@
+.new-contest{
+	margin-bottom: 30px;
+}
+
+.new-contest .header-info .info{
+	padding-top: 50px;
+}
+.new-contest .header-info .info h1{
+	font-family: "PT Sans";
+	font-size: 52px;
+	line-height: 1.2em;
+	text-transform: none;
+	letter-spacing: 0px;
+	font-weight: 700;
+	font-style: normal;
+	color: #608c28;
+}
+
+.new-contest .next-step{
+	margin-top: 15px;
+}
+
+.service {
+  width: 100%;
+  height: 320px;
+  margin: 30px 0;
+  text-align: center;
+  border: 1px solid #ddd;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .service .service-icon-box {
+    position: relative;
+    top: 100px;
+    display: inline-block;
+    margin-bottom: 40px;
+    padding: 10px;
+    background: white;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+  .service .service-heading {
+    position: relative;
+    top: 80px;
+    -webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  .service .service-description {
+    width: 80%;
+    margin: 0 auto;
+    opacity: 0;
+    -webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0); }
+  .service .service-icon-box > img.service-icon {
+    width: 40px; }
+  .service:hover {
+    border-color: #00a8ff; }
+  .service:hover .service-icon-box {
+    top: -30px; }
+  .service:hover .service-heading {
+    top: -30px; }
+  .service:hover .service-description {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); }
+
+
+.new-contest-2 .inquire{
+	padding-top: 30px;
+	padding-bottom: 60px;
+	background: #f4f4f6;
+	position: relative;
+	z-index: 1;
+}
+.new-contest-2 .inquire .row{
+	border-bottom: 1px solid #e3e4e8;
+	margin-bottom: 50px;
+	padding-bottom: 30px;
+}
+	.new-contest-2 .inquire .header{
+		padding-right: 15px;
+		float: left;
+	}
+	.new-contest-2 .inquire .header h3{
+		font-size: 28px;
+		font-family: "PT Sans";
+    font-weight: 500;
+    margin-bottom: 3px;
+    color: #32363e;
+		text-rendering: optimizelegibility;
+	}
+	.new-contest-2 .inquire .desc{
+		padding-right: 15px;
+		float: left;}
+	.new-contest-2 .inquire .desc .field-title{
+		font-weight: 500;
+    font-size: 19px;
+    padding: 0;
+		line-height: 2em;
+    margin: 0 0 .6em;
+    display: inline-block;
+    color: #32363e;
+		width: 100%;}
+		.new-contest-2 input, .new-contest-2 textarea, .new-contest-2 select{
+			padding: 7px;
+			display: block;
+			color: #535865;
+			border: 1px solid #c1c5cd;
+			border-radius: 0;
+			background-color: #fff;
+			font-size: 16px;
+			width: 100%;
+			line-height: 1.6;
+			vertical-align: middle;
+		}
+		.new-contest-2 .field-title textarea{
+			padding-top: .6em;
+			padding-bottom: .6em;
+			line-height: 1.3;
+			min-height: 90px;
+		}
+
+		.new-contest-2 .field-title .details{
+			margin: 0;
+			line-height: 1.6em;
+			font-weight: 400;
+			font-size: 14px;
+			color: #7e8595;}
+
+
+
+
+

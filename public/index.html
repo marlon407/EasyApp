@@ -1,6 +1,6 @@
 <html>
   <head>
-  	<base href="/">
+  	<base href="/index.html">
     <title>EasyAd</title>
 		<link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
 		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"> 
@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="/assets/css/how-it-works.css">
 		<link rel="stylesheet" href="/assets/css/designers.css">
 		<link rel="stylesheet" href="/assets/css/competitions.css">
+		<link rel="stylesheet" href="/assets/css/contest/new-contest.css">
 
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-route/angular-route.js"></script>
@@ -21,7 +22,6 @@
 		<script src="js/app.js"></script>
   </head>
   <body ng-app="sampleApp" ng-controller="MainController">
-
   	<!-- HEADER -->
 		<nav class="top-bar" data-topbar role="navigation">
 			<ul class="title-area">
@@ -50,12 +50,12 @@
 					<li><a href="/como-funciona">Como Funciona</a></li>
 					<li><a href="/competicoes">Competições</a></li>
 					<li><a href="/designers">Designers</a></li>
-					<li><a href="#"></a></li>
 				</ul>
 			</section>
 		</nav>
 		<!-- ANGULAR DYNAMIC CONTENT -->
-		<div ng-view></div>
+		<div ng-view><a class="exit-off-canvas"></a>
+		</div>
 		
 			<footer class="footer">
 				<div class="row">
@@ -69,7 +69,7 @@
 							<a href="#">Faq</a>
 							<a href="#">Contact</a>
 						</p>
-						<p class="copywrite">Copywrite Marlon Diego Casagranda França © 2015</p>
+						<p class="copywrite">Made with Love and JS by <br>Marlon Diego Casagranda França © 2015</p>
 					</div>
 				</div>
 		</footer>	
