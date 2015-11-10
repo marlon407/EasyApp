@@ -37,7 +37,6 @@ angular.module('UserCtrl', [])
 		}
 		
 		$scope.create = function(){
-			console.log($scope.user.name);
 			User.createUser($scope.user).then(function (response) {
 				if(response.data.success){
 					console.log("user created");

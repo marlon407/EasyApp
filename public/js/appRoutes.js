@@ -35,6 +35,10 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider',
 			templateUrl: 'views/contest/step2.html',
 			controller: 'ContestController'
 		})
+		.when('/competicoes/:id', {
+			templateUrl: 'views/contest/detail.html',
+			controller: 'ContestController'
+		})
 		.when('/:username', {
 			templateUrl: 'views/user.html',
 			controller: 'UserController'
