@@ -1,5 +1,6 @@
 .new-contest{
 	margin-bottom: 30px;
+	min-height: 60vh;
 }
 
 .new-contest .header-info .info{
@@ -73,7 +74,7 @@
 	position: relative;
 	z-index: 1;
 }
-.new-contest-2 .inquire .row{
+.new-contest-2 .inquire .gorup{
 	border-bottom: 1px solid #e3e4e8;
 	margin-bottom: 50px;
 	padding-bottom: 30px;
@@ -103,7 +104,7 @@
     color: #32363e;
 		width: 100%;}
 		.new-contest-2 input[type='text'], .new-contest-2 textarea, .new-contest-2 select{
-			padding: 7px;
+			padding: 5px 7px;
 			display: block;
 			color: #535865;
 			border: 1px solid #c1c5cd;
@@ -151,6 +152,10 @@
 			cursor: pointer;
 		}
 
+		.options input[type="radio"]:hover + label {
+			background:#608c28;
+			color: white;
+		}
 		.options input[type="radio"]:checked + label {
 				background:#608c28;
 				color: white;
@@ -176,7 +181,11 @@
 			font-size: 14px;
 			color: #7e8595;}
 
+	.new-contest-2 .half {
+		width: 30% !important;
+		float: left !important;
+	}
 
-
-
-
+	.new-contest-2 .between-sizes{
+		padding: 5px 0;
+	}

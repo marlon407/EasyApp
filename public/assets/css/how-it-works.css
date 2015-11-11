@@ -1,5 +1,6 @@
 .how-it-works-page{
 	margin-bottom: 30px;
+	min-height: 60vh;
 }
 
 .how-it-works-page .header-info .info{
@@ -77,4 +78,16 @@ hr{
 	line-height: 22px;
 	color: #000;
 	margin: 0;
+}
+
+ .how-it-works-page .break1{
+	 background-image: url("/assets/images/break2.jpg");
+	 min-height: 400px;
+	 margin-top: 40px;
+}
+.how-it-works-page .break1 .button {
+	margin-top: 200px;
+	padding: 20px 50;
+	border-radius: 4px;
+}
 }

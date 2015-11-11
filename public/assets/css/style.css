@@ -187,3 +187,16 @@ ul{
 	.footer .links a:last-child::after {
 		content: "";
 		padding: 0 0.4rem 0 0.8rem; }
+.login-page {
+	margin: 30px auto;
+	min-height: 60vh;
+}
+
+.login-page .options {
+	padding: 10px;
+}
+
+.user-profile {
+	margin-bottom: 30px;
+	min-height: 60vh;
+}

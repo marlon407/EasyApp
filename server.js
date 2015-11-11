@@ -36,7 +36,7 @@ require('./app/routes.js')(app, User)
 require('./app/routes/contestRoutes.js')(app, Contest)
 
 app.use(function(req, res) {
-    res.sendfile(__dirname + '/public/index.html');
+    res.sendFile(__dirname + '/public/index.html');
 });
 // =======================
 // start the server ======

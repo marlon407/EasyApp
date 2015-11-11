@@ -7,7 +7,7 @@
 		<hr>
 	</div>
 	<div class="inquire">
-		<div class="row">
+		<div class="row gorup">
 			<div class="large-4 smal-12 header columns">
 				<h3>Informações gerais</h3>
 			</div>
@@ -29,7 +29,7 @@
 			</div>
 		</div>
 	
-		<div class="row">
+		<div class="row gorup">
 			<div class="large-4 smal-12 header columns">
 				<h3>Detalhes do conteudo</h3>
 			</div>
@@ -42,10 +42,32 @@
 					<textarea ng-model="contest.content_detail"></textarea>
 					<span class="details">Describe your aims and requirements in detail here — the more specific, the better. Tell the designers what is required, but also let them know where they’re free to be creative.</span>
 				</label>
+				
+				<label class="field-title">Tamanho <i>(opcional)</i>
+				<ul class="row">
+					<li class="large-3 columns">
+						 	<input ng-model="contest.size1" type="text" placeholder="altura" />
+					</li>
+					<li class="large-1 columns">
+							<p class="text-center between-sizes"> por </p>
+					</li>
+					<li class="large-3 columns">
+							<input ng-model="contest.size2" type="text" placeholder="comprimento" />
+					</li>
+					<li class="large-4 columns end">
+						<select>
+							<option ng-model="contest.size_unit" value="cm">centimetros</option>
+							<option ng-model="contest.size_unit" value="meters">metros</option>
+							<option ng-model="contest.size_unit" value="pixel">pixels</option>
+						</select>
+					</li>
+				</ul>
+				<span class="details">Tamanho que voce planeja para seu flayer, poster, banner ou mideia desejada</span>
+				</label>
 			</div>
 		</div>
 		
-		<div class="row">
+		<div class="row gorup">
 			<div class="large-4 smal-12 header columns">
 				<h3>Mais..</h3>
 			</div>
@@ -61,7 +83,7 @@
 				<label class="field-title">De um prazo para upload dos projetos</label>
 				<ul class="options row">
 					<li class="large-4 columns">
-							<input type="radio" name="option" ng-model="contest.duration" value="7"/>
+						 	<input type="radio" name="option" ng-model="contest.duration" value="7" checked/>
 							<label for="contest.duration">7 Dias</label>
 					</li>
 					<li class="large-4 columns">

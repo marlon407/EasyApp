@@ -11,12 +11,14 @@ angular.module('UserCtrl', [])
 		
 		var doAuthentication = function(user){
 			User.authenticate($scope.user).then(function successCallback(response) {
-		    	console.log(response.data.message);
+		    	console.log(response.data.user);
 					if(response.data.success){
 						$window.localStorage.setItem("token", response.data.token);
-						$window.localStorage.setItem("username", user.name);
-						$window.localStorage.setItem("password", user.password);
-						$window.location.href = "/"
+						$window.localStorage.setItem("username", response.data.user.name);
+						$window.localStorage.setItem("password", response.data.user.password);
+						$window.localStorage.setItem("userrole", response.data.user.role);
+						$window.localStorage.setItem("userid", response.data.user._id);
+						$window.location.href = "/";
 					}
 				else{
 						$window.localStorage.removeItem("token");

@@ -41,7 +41,7 @@ module.exports = function(app, User) {
       name: req.body.name, 
       password: req.body.password,
       admin: false,
-			role: 0
+			role: req.body.role
     });
 
     // save the sample user
@@ -85,7 +85,8 @@ module.exports = function(app, User) {
           res.json({
             success: true,
             message: 'Enjoy your token!',
-            token: token
+            user: user,
+						token:token
           });
         }   
 

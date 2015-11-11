@@ -1,5 +1,6 @@
 .competitions{
 	margin-bottom: 30px;
+	min-height: 60vh;
 }
 
 .competitions .header-info .info{
@@ -60,7 +61,7 @@
     margin: 0; }
 	.event-desc .price{
 		width: 100%;
-		min-width: 100px;
+		min-width: 140px;
     padding: 12px;
     margin: 0 0 10px;
     border: 1px solid;

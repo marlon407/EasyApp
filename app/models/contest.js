@@ -11,7 +11,8 @@ module.exports = mongoose.model('Contest', new Schema({
 		more_detail: String,
 		title: String,
 		duration: Date,
-		user: Number,
+		user_id: String,
+		username: String,
 		type: Number,
 		price: Number,
 		active: Number

@@ -6,7 +6,6 @@ angular.module('UserService', []).factory('User', ['$http', '$window', function(
 				 url: 'api/authenticate',
 				 data: user
 			};
-
 			return $http(req);
 		},
 		
@@ -14,7 +13,6 @@ angular.module('UserService', []).factory('User', ['$http', '$window', function(
 			var req = {
 				method: 'GET',
 				url: 'api/getUser',
-				data: {token:$window.sessionStorage.token, username: username},
 				headers: {
 					'x-access-token': $window.localStorage.getItem("token"),
 					'username': username
@@ -34,7 +32,6 @@ angular.module('UserService', []).factory('User', ['$http', '$window', function(
 		},
 		
 		getAllDesigners: function(){
-			console.log("getting designres");
 			var req = {
 				method: "GET", 
 				url: "/getAllDesigners"

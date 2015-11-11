@@ -11,13 +11,13 @@ angular.module('MainCtrl', [])
 		
 		$scope.loadUser = function(){
 			User.getUser($routeParams.username).then(function (response) {
+				console.log(response.data.user);
 				$scope.current_user = response.data.user;
 			});
 		}
 		
 		$scope.getDesigners = function(){
 			User.getAllDesigners().then(function(response){
-				console.log(response.data);
 				$scope.designers = response.data;
 			});
 		}

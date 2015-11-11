@@ -43,8 +43,9 @@
 					<li><a href="/login">Entrar</a></li>
 				</ul>
 				<ul ng-if="user.name != undefined" class="right">
+					<li><a ng-href="/competicoes/novo">+ Competição</a></li>
 					<li><a ng-href="/{{user.name}}">{{user.name}}</a></li>
-					<li><a ng-click="logout()" href="">Log out</a></li>
+					<li><a ng-click="logout()" href="">Sair</a></li>
 				</ul>
 
 				<!-- Left Nav Section -->

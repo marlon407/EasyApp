@@ -1,12 +1,22 @@
-<div class="row">
+<div class="row login-page">
 	<div class="large-6 columns large-offset-3">
-    <h1 class="text-center"><span class="fa fa-sign-in"></span> Signup</h1>    <!-- LOGIN FORM -->
+    <h1 class="text-center"><span class="fa fa-sign-in"></span> Registrar-se</h1>    <!-- LOGIN FORM -->
 		<div class="form-group">
 				<input type="text" class="form-control" placeholder="Nome do usuario" ng-model="user.name" name="email">
 		</div>
 		<div class="form-group">
 				<input type="password" placeholder="Senha" class="form-control" ng-model="user.password" name="password">
 		</div>
+		<ul class="options row">
+			<li class="large-6 small-12 columns">
+					<input type="radio" name="option" ng-model="user.role" value="1" checked/>
+					<label for="contest.duration">Sou um designer</label>
+			</li>
+			<li class="large-6 small-12 columns">
+					<input type="radio" name="option" ng-model="user.role" value="0"/>
+					<label for="contest.duration">Sou um usúario</label>
+			</li>
+		</ul>
 
 		<div class="text-center">
 			<button type="submit" ng-click="create()" class="btn btn-warning btn-lg">Signup</button>
