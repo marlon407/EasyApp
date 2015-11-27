@@ -6,12 +6,14 @@ var app         = express();
 var bodyParser  = require('body-parser');
 var morgan      = require('morgan');
 var mongoose    = require('mongoose');
+var http 				= require('http');
+var jwt    			= require('jsonwebtoken'); // used to create, sign, and verify tokens
+var config 			= require('./config'); // get our config file
+var User   			= require('./app/models/user'); // get mongoose model
+var Contest   	= require('./app/models/contest'); // get mongoose model
+var Images_Contest = require('./app/models/images_contest'); // get mongoose model
 
-var jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
-var config = require('./config'); // get our config file
-var User   = require('./app/models/user'); // get our mongoose model
-var Contest   = require('./app/models/contest'); // get our mongoose model
-    
+
 // =======================
 // configuration =========
 // =======================
@@ -33,7 +35,8 @@ app.use(morgan('dev'));
 // routes ================
 // =======================
 require('./app/routes.js')(app, User)
-require('./app/routes/contestRoutes.js')(app, Contest)
+require('./app/routes/contestRoutes.js')(app, Contest, Images_Contest)
+
 
 app.use(function(req, res) {
     res.sendFile(__dirname + '/public/index.html');
@@ -42,4 +45,5 @@ app.use(function(req, res) {
 // start the server ======
 // =======================
 app.listen(port);
+
 console.log('Magic happens at http://localhost:' + port);

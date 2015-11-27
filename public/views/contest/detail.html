@@ -27,11 +27,16 @@
 			<p>{{contest.more_detail}}</p>
 			<h4>Prazo para competição:</h4>
 			<p>{{contest.duration | date:"MM/dd/yyyy"}}</p>
+			<img src="{{image}}">
 		</div>
 		<div class="general-info">
 			<h2 class="text-center group">Premiação</h2>
 			<div class="pull-left"><h4>Primeiro Lugar</h4><p>{{contest.price * 0.7| currency:"R$"}}</p></div>
 			<div class="pull-left"><h4>Segundo Lugar</h4><p>{{contest.price * 0.1| currency:"R$"}}</p></div>
+		</div>
+		<div class="general-info images">
+			<h2 class="text-center group">Imagens</h2>
+			<img src=""/>
 		</div>
 	</div>
 </div>

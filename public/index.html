@@ -14,7 +14,8 @@
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-route/angular-route.js"></script>
     <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="./bower_components/foundation/js/foundation.min.js"></script>
+    <script src="/bower_components/foundation/js/foundation.min.js"></script>
+		<script src="./bower_components/quickblox/quickblox.min.js"></script>
     <script src="js/controllers/UserCtrl.js"></script>
 		<script src="js/services/UserService.js"></script>
 		<script src="js/controllers/MainCtrl.js"></script>
@@ -44,8 +45,15 @@
 				</ul>
 				<ul ng-if="user.name != undefined" class="right">
 					<li><a ng-href="/competicoes/novo">+ Competição</a></li>
-					<li><a ng-href="/{{user.name}}">{{user.name}}</a></li>
-					<li><a ng-click="logout()" href="">Sair</a></li>
+					<li class="divider"></li>
+					<li class="has-dropdown">
+						<a href="">{{user.name}}</a>
+						<ul class="dropdown">
+							<li><a ng-href="/{{user.name}}">Perfil</a></li>
+							<li><a ng-href="/{{user.name}}">Editar perfil</a></li>
+							<li><a ng-click="logout()" href="">Sair</a></li>
+						</ul>
+					</li>
 				</ul>
 
 				<!-- Left Nav Section -->

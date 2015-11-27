@@ -1,7 +1,5 @@
-var jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
-var express= require('express');
 
-module.exports = function(app, Contest) {
+module.exports = function(app, Contest, Images_Contest) {
 	app.post('/newContest', function(req, res) {
 		var contest = new Contest({ 
       title: req.body.title, 
@@ -15,14 +13,28 @@ module.exports = function(app, Contest) {
 			companyName: req.body.companyName,
 			price: req.body.price,
 			type: req.body.type,
-			active: 1
+			active: 1,
     });
 
     console.log("creating contest"+ contest.type);
     contest.save(function(err) {
       if (err) throw err;
       console.log('Contest created successfully');
-      res.json({ success: true });
+      res.json({ success: true, id: contest._id });
+    });
+	});
+	
+	app.post('/saveImage', function(req, res) {
+    console.log("saving image");
+		console.log(req.body);
+    var image_contest = new Images_Contest({
+			contest_id: req.body.contest_id,
+			image_id:req.body.image_id
+		});
+		image_contest.save(function(err) {
+      if (err) throw err;
+      console.log('images saved successfully');
+      res.json({ success: true});
     });
 	});
 	
@@ -34,8 +46,12 @@ module.exports = function(app, Contest) {
 	});
 	
 	app.get('/getContestById', function(req, res) {
-    Contest.find({_id: req.headers['id']},function(err, contest) {
-      res.json(contest);
+		var contestId = req.headers['id']
+		console.log("finding "+ contestId);
+    Contest.find({_id: contestId},function(err, contest) {
+			Images_Contest.find({contest_id: parseInt(contestId)},function(err, images) {
+				res.json({contest:contest, images:images});
+			})
     });
 	});
 }

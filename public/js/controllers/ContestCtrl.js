@@ -13,14 +13,29 @@ angular.module('ContestCtrl', [])
 			$scope.newContest = function(){
 				$scope.contest = {}
 			}
+			
+			var QBApp = {
+				appId: 31428,
+				authKey: 'NhN67EHRXfqqFYf',
+				authSecret: 'BQkHWzDYjjAyWmY'
+			};
+
+			var QBUser = {
+			 login: "marlon407_4960566_12213",
+			 password: "161094ikarim"
+			};
+
+			var CONFIG = {
+
+			};
+
+			QB.init(QBApp.appId, QBApp.authKey, QBApp.authSecret, CONFIG);
 
 			$scope.saveContest = function(){
 				$scope.adType = {}
 				var findType = Contest.getAllPrices().filter(function( obj ) {
 					if(obj.type == $routeParams.type) return $scope.adType = obj;
 				});
-				
-				console.log(parseInt($scope.contest.duration));
 				var someDate = new Date();
 				var numberOfDaysToAdd = parseInt($scope.contest.duration);
 				someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
@@ -32,7 +47,23 @@ angular.module('ContestCtrl', [])
 				Contest.saveContest($scope.contest).then(function (response) {
 					if(response.data.success){
 						console.log("contest created");
-						$window.location.href = "/competicoes";
+						var inputFile = $("input[type=file]")[0].files[0];
+						var params = {name: response.data.id+"_1", file: inputFile, type: inputFile.type, size: inputFile.size, 'public': false};
+						QB.createSession(QBUser, function(err, result) {
+							if (err) {
+								console.log('Something went wrong: ' + err);
+							} else {
+								QB.content.createAndUpload(params, function(err, img_response){
+									if (err) {
+										console.log(err);
+									} else {
+										Contest.saveImage(parseInt(response.data.id), parseInt(img_response.id)).then(function (res) {
+											$window.location.href = "/competicoes";
+										});
+									}
+								});
+							}
+						});
 					}
 					else console.log("Contest error");
 				});
@@ -46,8 +77,15 @@ angular.module('ContestCtrl', [])
 			
 			$scope.showContest = function(){
 				Contest.getContestById($routeParams.id).then(function(response){
-					console.log(response.data);
-					$scope.contest = response.data[0];
+					$scope.contest = response.data.contest[0];
+					QB.createSession(QBUser, function(err, result) {
+							if (err) {
+								console.log('Something went wrong: ' + err);
+							} else {
+								var imageHTML = "<img src='" + QB.content.privateUrl(response.data.images[0].image_id+"/download") + "' />";
+								$('.images').append(imageHTML);
+							}
+					});
 				});
 			}
 	}]).filter('tranformMonth', function(){
