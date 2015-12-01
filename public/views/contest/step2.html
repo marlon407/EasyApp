@@ -76,10 +76,10 @@
 					<textarea ng-model="contest.more_detail"></textarea>
 				</label>
 				<label class="field-title">Você tem alguma imagem ou documento que posssa ser útil?
-					<input type="file" id="input" multiple>
+					 <input type="file" onchange="angular.element(this).scope().uploadImage(this)" />
 					<span class="details">Ex. Seu logo, fotos, ilustrações, idéias, etc..</span>
 				</label>
-				
+				<ul class="small-block-grid-3 medium-block-grid-3 large-block-grid-3 images-area"></ul>
 				<label class="field-title">De um prazo para upload dos projetos</label>
 				<ul class="options row">
 					<li class="large-4 columns">
@@ -97,7 +97,6 @@
 				</ul>
 			</div>
 		</div>
-		
 		
 		<div class="row">
 			<div class="large-4 smal-12 header columns">

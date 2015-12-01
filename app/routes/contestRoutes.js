@@ -27,15 +27,17 @@ module.exports = function(app, Contest, Images_Contest) {
 	app.post('/saveImage', function(req, res) {
     console.log("saving image");
 		console.log(req.body);
-    var image_contest = new Images_Contest({
-			contest_id: req.body.contest_id,
-			image_id:req.body.image_id
-		});
-		image_contest.save(function(err) {
-      if (err) throw err;
-      console.log('images saved successfully');
-      res.json({ success: true});
-    });
+		for(var i = 0; i< req.body.image_ids.length; i++){
+			var image_contest = new Images_Contest({
+				contest_id: req.body.contest_id,
+				image_id:req.body.image_ids[i]
+			});
+			image_contest.save(function(err) {
+				if (err) throw err;
+				console.log('images saved successfully');
+			});	
+		}
+		res.json({ success: true});
 	});
 	
 	app.get('/getContests', function(req, res) {
@@ -49,7 +51,7 @@ module.exports = function(app, Contest, Images_Contest) {
 		var contestId = req.headers['id']
 		console.log("finding "+ contestId);
     Contest.find({_id: contestId},function(err, contest) {
-			Images_Contest.find({contest_id: parseInt(contestId)},function(err, images) {
+			Images_Contest.find({contest_id: contestId},function(err, images) {
 				res.json({contest:contest, images:images});
 			})
     });

@@ -17,9 +17,14 @@ angular.module('MainCtrl', [])
 		}
 		
 		$scope.getDesigners = function(){
+			$window.scrollTo(0, 0);
 			User.getAllDesigners().then(function(response){
 				$scope.designers = response.data;
 			});
+		}
+		
+		$scope.howitworks = function(){
+			$window.scrollTo(0, 0);
 		}
 		
 	}]);

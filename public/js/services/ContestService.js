@@ -9,11 +9,11 @@ angular.module('ContestService', []).factory('Contest', ['$http', '$window', fun
 			};
 			return $http(req);
 		},
-		saveImage: function(contest_id, image_id){
+		saveImage: function(contest_id, image_ids){
 			var req = {
 				 method: 'POST',
 				 url: '/saveImage',
-				 data: {contest_id:contest_id,image_id:image_id}
+				 data: {contest_id:contest_id,image_ids:image_ids}
 			};
 			return $http(req);
 		},

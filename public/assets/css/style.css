@@ -6,6 +6,13 @@ ul{
 .top-bar-section ul li > a{
 	font-size: 1em;
 }
+.top-bar .name h1{
+	font-size: 24px;
+	font-family: 'PT Sans' !important;
+}
+.name h1 a{
+	color: #5bbc2e !important;
+}
 
 .hero{
 	background-image: url("/assets/images/hero3.jpg");
@@ -33,6 +40,19 @@ ul{
 	font-family: 'PT Sans' !important;
 	margin-top: 15px;
 	color: #575757;
+}
+
+.home .what-is .round-icon {
+	border: 3px solid;
+	border-radius: 50%;
+	display: table;
+	height: 80px;
+	margin: 20px auto 1rem;
+	width: 80px;
+	font-size: 3rem; }
+
+.icon-fi:before{
+	margin-top: 15px;
 }
 
 .home .what-is .row{

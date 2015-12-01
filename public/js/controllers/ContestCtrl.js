@@ -12,6 +12,8 @@ angular.module('ContestCtrl', [])
 		function($scope, Contest, $window, $routeParams){
 			$scope.newContest = function(){
 				$scope.contest = {}
+				$scope.image_ids = []
+				$window.scrollTo(0, 0);
 			}
 			
 			var QBApp = {
@@ -25,9 +27,7 @@ angular.module('ContestCtrl', [])
 			 password: "161094ikarim"
 			};
 
-			var CONFIG = {
-
-			};
+			var CONFIG = {};
 
 			QB.init(QBApp.appId, QBApp.authKey, QBApp.authSecret, CONFIG);
 
@@ -47,27 +47,37 @@ angular.module('ContestCtrl', [])
 				Contest.saveContest($scope.contest).then(function (response) {
 					if(response.data.success){
 						console.log("contest created");
-						var inputFile = $("input[type=file]")[0].files[0];
-						var params = {name: response.data.id+"_1", file: inputFile, type: inputFile.type, size: inputFile.size, 'public': false};
-						QB.createSession(QBUser, function(err, result) {
-							if (err) {
-								console.log('Something went wrong: ' + err);
-							} else {
-								QB.content.createAndUpload(params, function(err, img_response){
-									if (err) {
-										console.log(err);
-									} else {
-										Contest.saveImage(parseInt(response.data.id), parseInt(img_response.id)).then(function (res) {
-											$window.location.href = "/competicoes";
-										});
-									}
-								});
-							}
-						});
-					}
-					else console.log("Contest error");
+						Contest.saveImage(response.data.id.toString(),$scope.image_ids).then(function (res) {
+								console.log("images saved");
+								$window.location.href = "/competicoes";
+							});
+						}
+						else console.log("Contest error");
 				});
 			}
+			
+			$scope.uploadImage = function (input) {
+				var inputFile = input.files[0];
+				var load = "<li class='list-in-grid'><div id='"+inputFile.type+inputFile.size+"' class='loader'>Loading...</div></li>"
+				$(".images-area").append(load);
+				var params = {name: inputFile.name, file: inputFile, type: inputFile.type, size: inputFile.size, 'public': false};
+					QB.createSession(QBUser, function(err, result) {
+						if (err) {
+							console.log('Something went wrong: ' + err);
+						} else {
+							QB.content.createAndUpload(params, function(err, img_response){
+								if (err) {
+									console.log(err);
+								} else {
+									document.getElementById(inputFile.type+inputFile.size).parentElement.remove();
+									var imageHTML = "<li class='list-in-grid'><img src='" + QB.content.privateUrl(img_response.id+"/download") + "' /></li>";
+								$(".images-area").append(imageHTML);
+									$scope.image_ids.push(img_response.id);
+								}
+							});
+						}
+					});
+    	}
 
 			$scope.getAllContests = function(){
 				Contest.getContests().then(function(response){
@@ -76,14 +86,18 @@ angular.module('ContestCtrl', [])
 			}
 			
 			$scope.showContest = function(){
+				$window.scrollTo(0, 0);
 				Contest.getContestById($routeParams.id).then(function(response){
 					$scope.contest = response.data.contest[0];
 					QB.createSession(QBUser, function(err, result) {
 							if (err) {
 								console.log('Something went wrong: ' + err);
 							} else {
-								var imageHTML = "<img src='" + QB.content.privateUrl(response.data.images[0].image_id+"/download") + "' />";
-								$('.images').append(imageHTML);
+								console.log(response.data.images);
+								for(var i = 0; i< response.data.images.length; i++){
+									var imageHTML = "<li><img class='image-in-grid' src='" + 		QB.content.privateUrl(response.data.images[i].image_id+"/download") + "' /></li>";
+									$('.images-grid').append(imageHTML);
+								}
 							}
 					});
 				});
