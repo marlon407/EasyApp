@@ -12,6 +12,9 @@ var config 			= require('./config'); // get our config file
 var User   			= require('./app/models/user'); // get mongoose model
 var Contest   	= require('./app/models/contest'); // get mongoose model
 var Images_Contest = require('./app/models/images_contest'); // get mongoose model
+var Intention    = require('./app/models/intention'); // get mongoose model
+var Images_Project = require('./app/models/images_project'); // get mongoose model
+var Project    = require('./app/models/project'); // get mongoose model
 
 
 // =======================
@@ -34,8 +37,9 @@ app.use(morgan('dev'));
 // =======================
 // routes ================
 // =======================
-require('./app/routes.js')(app, User)
-require('./app/routes/contestRoutes.js')(app, Contest, Images_Contest)
+require('./app/routes.js')(app, User, Contest, Project, Intention)
+require('./app/routes/contestRoutes.js')(app, Contest, Images_Contest, Intention)
+require('./app/routes/projectRoutes.js')(app, Project, Images_Project)
 
 
 app.use(function(req, res) {

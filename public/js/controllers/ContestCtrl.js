@@ -85,23 +85,42 @@ angular.module('ContestCtrl', [])
 				});
 			}
 			
+			$scope.setIntention = function(){
+				Contest.setIntention($scope.contest._id, $window.localStorage.getItem("userid")).then(function(response){
+					console.log(response.data.count)
+					$(".intend_btn").text("Participando");
+					$(".intend_btn").prop("disabled", "disabled");
+					$(".intend_count").text(response.data.count);
+				});
+			}
+			
 			$scope.showContest = function(){
-				$window.scrollTo(0, 0);
+				$window.scrollTo(0, 0); 
+				var role = $window.localStorage.getItem("userRole")
+				$scope.isDesigner = role == 1
+				console.log($scope.isDesigner);
 				Contest.getContestById($routeParams.id).then(function(response){
 					$scope.contest = response.data.contest[0];
 					QB.createSession(QBUser, function(err, result) {
 							if (err) {
 								console.log('Something went wrong: ' + err);
 							} else {
-								console.log(response.data.images);
 								for(var i = 0; i< response.data.images.length; i++){
 									var imageHTML = "<li><img class='image-in-grid' src='" + 		QB.content.privateUrl(response.data.images[i].image_id+"/download") + "' /></li>";
 									$('.images-grid').append(imageHTML);
 								}
 							}
 					});
+					Contest.getIntentions($routeParams.id, $window.localStorage.getItem("userid")).then(function(response){
+						if(response.data.isPlaying){
+							$(".intend_btn").text("Participando");
+							$(".intend_btn").prop("disabled", "disabled");
+						}
+						$(".intend_count").text(response.data.allByContest);
+					});
 				});
 			}
+			
 	}]).filter('tranformMonth', function(){
 	return function(month) {
 		var result = "";

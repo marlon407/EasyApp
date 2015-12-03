@@ -3,17 +3,13 @@ angular.module('MainCtrl', [])
 		
 		$scope.user = {name:localStorage.getItem("username"), password:localStorage.getItem("password")}
 		$scope.logout = function(){
-			localStorage.removeItem("username");
-			localStorage.removeItem("password");
+			$window.localStorage.removeItem("token");
+			$window.localStorage.removeItem("username");
+			$window.localStorage.removeItem("userid");
+			$window.localStorage.removeItem("userLogged");
+			$window.localStorage.removeItem("userRole");
 			$scope.user = undefined;
 			$window.location.href = "/";
-		}
-		
-		$scope.loadUser = function(){
-			User.getUser($routeParams.username).then(function (response) {
-				console.log(response.data.user);
-				$scope.current_user = response.data.user;
-			});
 		}
 		
 		$scope.getDesigners = function(){

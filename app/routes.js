@@ -1,7 +1,7 @@
 var jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var express= require('express');
 
-module.exports = function(app, User) {
+module.exports = function(app, User, Contest, Project, Intention) {
 
   // =======================
   // routes ================
@@ -116,14 +116,12 @@ module.exports = function(app, User) {
       });
 
     } else {
-
       // if there is no token
       // return an error
       return res.status(403).send({ 
           success: false, 
           message: 'No token provided.' 
-      });
-      
+      }); 
     }
   });
 
@@ -140,7 +138,13 @@ module.exports = function(app, User) {
       if (err) throw err;
       if (!user) {
         res.json({ success: false, message: 'Authentication failed. User not found.' });
-      } else if (user) res.json({user: user});
+      } else if (user){
+				Contest.find({user_id: user._id},function(err, contests) {
+					Project.find({user_id: user._id},function(err, projects) {
+						res.json({user: user, contests:contests, projects:projects});
+					});
+				});
+			};
     });
   });
 

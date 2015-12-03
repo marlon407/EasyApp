@@ -1,0 +1,97 @@
+.project{
+	margin-bottom: 30px;
+	min-height: 60vh;
+}
+
+.project .header-info .info{
+	padding-top: 50px;
+}
+.project .header-info .info h1{
+	font-family: "PT Sans";
+	font-size: 52px;
+	line-height: 1.2em;
+	text-transform: none;
+	letter-spacing: 0px;
+	font-weight: 700;
+	font-style: normal;
+	color: #608c28;
+}
+
+.new-project .section{
+	border-bottom: 1px solid #e3e4e8;
+	margin-bottom: 20px;
+}
+
+.new-project .field-title {
+	font-weight: 500;
+	font-size: 19px;
+	padding: 0;
+	line-height: 2em;
+	margin: 0 0 .6em;
+	display: inline-block;
+	color: #32363e;
+	width: 100%;
+}
+
+.new-project .field-title textarea {
+	padding-top: .6em;
+	padding-bottom: .6em;
+	line-height: 1.3;
+	min-height: 90px;
+	margin-bottom: 0px;
+}
+
+.new-project .field-title .details {
+	margin: 0;
+	line-height: 1.6em;
+	font-weight: 400;
+	font-size: 14px;
+	color: #7e8595;
+}
+
+.new-project .box{
+	border: 2px dashed;
+  border-radius: 5px;
+	padding: 6.25rem 1.25rem;
+}
+
+.project-inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.project-inputfile + label {
+		color: #f1e5e6;
+    background-color: #d3394c;
+    max-width: 80%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+}
+
+.project-inputfile:focus + label,
+.project-inputfile + label:hover {
+    background-color: red;
+}
+
+.project-inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.project-inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+.new-project .list-in-grid img{
+	max-width: 600px;
+}

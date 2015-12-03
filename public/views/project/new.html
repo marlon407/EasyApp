@@ -1,0 +1,39 @@
+<div class="project new-project" ng-init="newProject()">
+	<div class="section text-center header-info">
+		<div class="info">
+			<h1>Projeto</h1>
+			<h3>Faça o upload do seu projeto</h3>
+		</div>
+		<hr>
+	</div>
+	
+	<div class="row section">
+		<label class="field-title">De um titulo para seu projeto
+				<textarea ng-model="project.title"></textarea>
+			</label>
+		<label class="field-title">Faça uma breve descrição da sua proposta.
+				<textarea ng-model="project.description"></textarea>
+				<span class="details"> Fale para o cliente o que você acha importante que ele saiba sobre o seu projeto</span>
+			</label>
+	</div>
+	
+	<div class="row">
+		<label class="field-title">Imagens
+				<span class="details"> (Faça o upload de até 2 images)</span>
+			</label>
+	</div>
+	
+	<div class="row box text-center">
+		<input type="file" name="file" id="file" onchange="angular.element(this).scope().uploadImage(this)" class="project-inputfile" />
+		<label for="file">Upload arquivo</label>
+	</div>
+	
+	<div class="row text-center section image-section">
+		<ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-1 images-area"></ul>
+	</div>
+	
+	<div class="row">
+			<button ng-click="setIntention()" class="button">Salvar</button>
+			<button ng-click="upload()" class="button upload_btn">Upload da proposta</button>
+		</div>
+</div>

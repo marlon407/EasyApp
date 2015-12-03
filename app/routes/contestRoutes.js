@@ -1,5 +1,5 @@
 
-module.exports = function(app, Contest, Images_Contest) {
+module.exports = function(app, Contest, Images_Contest, Intention) {
 	app.post('/newContest', function(req, res) {
 		var contest = new Contest({ 
       title: req.body.title, 
@@ -26,7 +26,6 @@ module.exports = function(app, Contest, Images_Contest) {
 	
 	app.post('/saveImage', function(req, res) {
     console.log("saving image");
-		console.log(req.body);
 		for(var i = 0; i< req.body.image_ids.length; i++){
 			var image_contest = new Images_Contest({
 				contest_id: req.body.contest_id,
@@ -56,4 +55,31 @@ module.exports = function(app, Contest, Images_Contest) {
 			})
     });
 	});
+	app.post('/setIntention', function(req, res) {
+		console.log(req.body.contest_id);
+		console.log(req.body.user_id);
+    var intend = new Intention({
+			contest_id: req.body.contest_id,
+			user_id: req.body.user_id
+		});
+		intend.save(function(err) {
+      if (err) throw err;
+      console.log('intention created successfully');
+			Intention.find({contest_id: req.body.contest_id},function(err, all) {
+				res.json({ success: true, count:all.length});
+			});
+    });
+	});
+	app.post('/getIntentions', function(req, res) {
+		console.log('getIntentions');
+		console.log(req.body.contest_id);
+		console.log(req.body.user_id);
+		Intention.find({contest_id: req.body.contest_id},function(err, allByContest) {
+			Intention.find({user_id: req.body.user_id},function(err, allbyUser) {
+				console.log(allByContest);
+				res.json({ allByContest: allByContest.length, isPlaying:allbyUser.length > 0});	
+			});
+		});
+	});
+	
 }

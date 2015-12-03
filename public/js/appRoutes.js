@@ -39,8 +39,16 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider',
 			templateUrl: 'views/contest/detail.html',
 			controller: 'ContestController'
 		})
-		.when('/:username', {
-			templateUrl: 'views/user.html',
+		.when('/projeto/novo', {
+			templateUrl: 'views/project/new.html',
+			controller: 'ProjectController'
+		})
+		.when('/projeto/:id', {
+			templateUrl: 'views/project/detail.html',
+			controller: 'ProjectController'
+		})
+		.when('/perfil/:username', {
+			templateUrl: 'views/user/user.html',
 			controller: 'UserController'
 		});
 		$locationProvider.html5Mode(true);

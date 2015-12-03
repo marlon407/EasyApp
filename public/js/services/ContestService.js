@@ -34,6 +34,22 @@ angular.module('ContestService', []).factory('Contest', ['$http', '$window', fun
 			};
 			return $http(req);
 		},
+		setIntention: function(contest_id, user_id){
+			var req = {
+				 method: 'POST',
+				 url: '/setIntention',
+				 data: {contest_id:contest_id,user_id:user_id}
+			};
+			return $http(req);
+		},
+		getIntentions: function(contest_id, user_id){
+			var req = {
+				 method: 'POST',
+				 url: '/getIntentions',
+				 data: {contest_id:contest_id,user_id:user_id}
+			};
+			return $http(req);
+		},
 		getAllPrices: function(){
 			var adTypes = [
 			{
