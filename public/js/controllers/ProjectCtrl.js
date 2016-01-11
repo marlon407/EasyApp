@@ -16,8 +16,9 @@ angular.module('ProjectCtrl', [])
 			QB.init(QBApp.appId, QBApp.authKey, QBApp.authSecret, CONFIG);
 		
 			$scope.newProject = function(){
-				$scope.project = {}
-				$scope.image_ids = []
+				$scope.contestId = $routeParams.id;
+				$scope.project = {contest_id: $routeParams.id};
+				$scope.image_ids = [];
 				$window.scrollTo(0, 0);
 			}
 			

@@ -31,6 +31,16 @@ angular.module('UserService', []).factory('User', ['$http', '$window', function(
 			return $http(req);
 		},
 		
+		update: function(user){
+			console.log("updating user");
+			var req = {
+				 method: 'POST',
+				 url: '/updateUser',
+				 data: user
+			};
+			return $http(req);
+		},
+		
 		getAllDesigners: function(){
 			var req = {
 				method: "GET", 

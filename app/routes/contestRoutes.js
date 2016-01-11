@@ -13,7 +13,10 @@ module.exports = function(app, Contest, Images_Contest, Intention) {
 			companyName: req.body.companyName,
 			price: req.body.price,
 			type: req.body.type,
-			active: 1,
+			status: 0,
+			size_unit: req.body.size_unit,
+			sizex: req.body.sizex,
+			sizey: req.body.sizey,
     });
 
     console.log("creating contest"+ contest.type);
@@ -41,8 +44,15 @@ module.exports = function(app, Contest, Images_Contest, Intention) {
 	
 	app.get('/getContests', function(req, res) {
     console.log("getting contests");
-    Contest.find(function(err, all) {
+    Contest.find({status: 0},function(err, all) {
       res.json(all);
+    });
+	});
+	
+	app.get('/getClosedContests', function(req, res) {
+    console.log("getting contests");
+    Contest.find({status: 2},function(err, closed) {
+      res.json(closed);
     });
 	});
 	

@@ -1,0 +1,29 @@
+<div class="competitions contest competition-detail" data-ng-controller="ContestController" data-ng-init="showClosedContest()">
+	<div class="section text-center header-info">
+		<div class="info">
+			<article class="event row">
+				<div class="event-date medium-3 small-12 columns">
+					<p class="event-month">{{contest.duration | date:"MM"|tranformMonth}}</p>
+					<p class="event-day">{{contest.duration | date:"dd"}}</p>
+				</div>
+				<div class="event-desc medium-9 small-12 columns">
+					<div class="left">
+						<h4 class="event-desc-header">{{contest.title}}</h4>
+						<p class="event-desc-detail"><span class="event-desc-time"></span>por: {{contest.username}}</p>
+						<a href="/competicoes/{{contest._id}}" class="rsvp button">Detalhes</a>
+					</div>
+					<div class="right">
+						<span class="price">{{contest.price*0.8| currency:"R$"}}</span>
+						<span class="price">{{contest.type|translate}}</span>
+					</div>
+				</div>
+			</article>
+		</div>
+		<hr>
+	</div>
+	<div class="inquire">
+		<div class="text-center">
+			<h3>Confira os projetos que concoreram</h3>
+		</div>
+	</div>
+</div>

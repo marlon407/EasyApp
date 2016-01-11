@@ -7,6 +7,7 @@ module.exports = mongoose.model('Project', new Schema({
 		description: String,
 		title: String,
 		date: Date,
+		place:Number,
 		user_id: String,
-		place:Number
+		contest_id: String
 }));

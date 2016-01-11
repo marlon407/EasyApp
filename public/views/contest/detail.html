@@ -1,49 +1,53 @@
-<div class="competitions competition-detail" data-ng-controller="ContestController" data-ng-init="showContest()">
+<div class="competitions contest competition-detail" data-ng-controller="ContestController" data-ng-init="showContest()">
 	<div class="section text-center header-info">
 		<div class="info">
 			<h1>{{contest.title}}</h1>
 		</div>
 		<hr>
 	</div>
-	<div class="contest-detail">
-		<div class="general-info">
-			<h2 class="text-center group">Infomações Gerais</h2>
-			<h4>Empresa:</h4>
-			<p>{{contest.companyName}}</p>
-			<h4>Descrição do produto/empresa e publico alvo:</h4>
-			<p>{{contest.business_desc}}</p>
-			<h4>Tipo de indústria:</h4>
-			<p>{{contest.industry}}</p>
-		</div>
-		<div class="general-info">
-			<h2 class="text-center group">Detalhes da competição</h2>
-			<h4>Tipo de anúncio:</h4>
-			<p>{{contest.type|translate}}</p>
-			<h4>Descrição do projeto:</h4>
-			<p>{{contest.content_detail}}</p>
-			<h4>Descrição do produto/empresa e publico alvo:</h4>
-			<p>{{contest.business_desc}}</p>
-			<h4>Detalhes adicionais:</h4>
-			<p>{{contest.more_detail}}</p>
-			<h4>Prazo para competição:</h4>
-			<p>{{contest.duration | date:"MM/dd/yyyy"}}</p>
-			<img src="{{image}}">
-		</div>
-		<div class="general-info">
-			<h2 class="text-center group">Premiação</h2>
-			<div class="pull-left"><h4>Primeiro Lugar</h4><p>{{contest.price * 0.7| currency:"R$"}}</p></div>
-			<div class="pull-left"><h4>Segundo Lugar</h4><p>{{contest.price * 0.1| currency:"R$"}}</p></div>
-		</div>
-		<div class="general-info images">
-			<h2 class="text-center group">Imagens</h2>
-			<ul class="small-block-grid-3 medium-block-grid-3 large-block-grid-4 images-grid">
-			</ul>
-		</div>
-		<div class="general-info row" ng-show="isDesigner">
-			<h2 class="text-center group">Designer</h2>
-			<button ng-click="setIntention()" class="button intend_btn">Participar</button>
-			<span class="intend_count"></span>
-			<a href="/projeto/novo" class="button">Submeter meu projeto</a>
+	<div class="inquire">
+		<div class="contest-detail">
+			<div class="general-info">
+				<h2 class="text-center group">Informações Gerais</h2>
+				<h4>Empresa:</h4>
+				<p>{{contest.companyName}}</p>
+				<h4>Descrição do produto/empresa e publico alvo:</h4>
+				<p>{{contest.business_desc}}</p>
+				<h4>Tipo de indústria:</h4>
+				<p>{{contest.industry}}</p>
+			</div>
+			<div class="general-info">
+				<h2 class="text-center group">Detalhes da competição</h2>
+				<h4>Tipo de anúncio:</h4>
+				<p>{{contest.type|translate}}</p>
+				<h4>Tamanho:</h4>
+				<p>{{contest.sizex}} x {{contest.sizey}} {{contest.size_unit}}</p>
+				<h4>Descrição do projeto:</h4>
+				<p>{{contest.content_detail}}</p>
+				<h4>Descrição do produto/empresa e publico alvo:</h4>
+				<p>{{contest.business_desc}}</p>
+				<h4>Detalhes adicionais:</h4>
+				<p>{{contest.more_detail}}</p>
+				<h4>Prazo para competição:</h4>
+				<p>{{contest.duration | date:"MM/dd/yyyy"}}</p>
+				<img src="{{image}}">
+			</div>
+			<div class="general-info">
+				<h2 class="text-center group">Premiação</h2>
+				<div class="pull-left"><h4>Primeiro Lugar</h4><p>{{contest.price * 0.7| currency:"R$"}}</p></div>
+				<div class="pull-left"><h4>Segundo Lugar</h4><p>{{contest.price * 0.1| currency:"R$"}}</p></div>
+			</div>
+			<div class="general-info images">
+				<h2 class="text-center group">Imagens</h2>
+				<ul class="small-block-grid-3 medium-block-grid-3 large-block-grid-4 images-grid">
+				</ul>
+			</div>
+			<div class="general-info row" ng-show="isDesigner">
+				<h2 class="text-center group">Designer</h2>
+				<button ng-click="setIntention()" class="button intend_btn">Participar</button>
+				<span class="intend_count"></span>
+				<a href="/projeto/novo/{{contest._id}}" class="button">Submeter meu projeto</a>
+			</div>
 		</div>
 	</div>
 </div>

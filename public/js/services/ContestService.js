@@ -24,6 +24,13 @@ angular.module('ContestService', []).factory('Contest', ['$http', '$window', fun
 			};
 			return $http(req);
 		},
+		getClosedContests: function(){
+			var req = {
+				method: 'GET', 
+				url: '/getClosedContests'
+			};
+			return $http(req);
+		},
 		getContestById: function(id){
 			var req = {
 				method: 'GET',
@@ -68,19 +75,19 @@ angular.module('ContestService', []).factory('Contest', ['$http', '$window', fun
 				'id': 3,
 				'type': "flayer",
 				'description': "Flayer",
-				'price': 199.99,
+				'price': 499.99,
 			},
 			{
 				'id': 4,
 				'type': "poster",
 				'description': "Poster",
-				'price': 199.99,
+				'price': 499.99,
 			},
 			{
 				'id': 5,
 				'type': "outdoor",
 				'description': "Outdoor",
-				'price': 199.99,
+				'price': 499.99,
 			},
 			{
 				'id': 6,
@@ -98,7 +105,7 @@ angular.module('ContestService', []).factory('Contest', ['$http', '$window', fun
 				'id': 8,
 				'type': "app",
 				'description': "Apps",
-				'price': 199.99,
+				'price': 399.99,
 			},
 		]
 			return adTypes;

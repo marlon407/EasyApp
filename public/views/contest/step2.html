@@ -1,4 +1,4 @@
-<div class="new-contest new-contest-2" data-ng-controller="ContestController" data-ng-init="newContest()">
+<div class="new-contest new-contest-2 contest" data-ng-controller="ContestController" data-ng-init="newContest()">
 	<div class="section text-center header-info">
 		<div class="info">
 			<h1>Competições</h1>
@@ -19,11 +19,11 @@
 					<textarea ng-model="contest.business_desc" placeholder="Ex. Somos um loja de discos e temos discos para todo os gostos"></textarea>
 				</label>
 				<label class="field-title">Selecione seu tipo de indústria
-					<select>
-						<option ng-model="contest.industry" value="1">Tecnologia</option>
-						<option ng-model="contest.industry" value="2">Comercio</option>
-						<option ng-model="contest.industry" value="3">Serviços</option>
-						<option ng-model="contest.industry" value="4">Naval</option>
+					<select ng-model="contest.industry">
+						<option selected value="1">Tecnologia</option>
+						<option value="2">Comercio</option>
+						<option value="3">Serviços</option>
+						<option value="4">Naval</option>
 					</select>
 				</label>
 			</div>
@@ -46,19 +46,19 @@
 				<label class="field-title">Tamanho <i>(opcional)</i>
 				<ul class="row">
 					<li class="large-3 columns">
-						 	<input ng-model="contest.size1" type="text" placeholder="altura" />
+						 	<input ng-model="contest.sizey" type="text" placeholder="altura" />
 					</li>
 					<li class="large-1 columns">
 							<p class="text-center between-sizes"> por </p>
 					</li>
 					<li class="large-3 columns">
-							<input ng-model="contest.size2" type="text" placeholder="comprimento" />
+							<input ng-model="contest.sizex" type="text" placeholder="comprimento" />
 					</li>
 					<li class="large-4 columns end">
-						<select>
-							<option ng-model="contest.size_unit" value="cm">centimetros</option>
-							<option ng-model="contest.size_unit" value="meters">metros</option>
-							<option ng-model="contest.size_unit" value="pixel">pixels</option>
+						<select ng-model="contest.size_unit">
+							<option value="cm" selected>centimetros</option>
+							<option value="meters">metros</option>
+							<option value="pixel">pixels</option>
 						</select>
 					</li>
 				</ul>

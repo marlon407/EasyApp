@@ -5,10 +5,6 @@ angular.module('UserCtrl', [])
 			$scope.users = User.get();
 		}
 		
-		$scope.create = function(nerd){
-			$scope.users = User.create(nerd);
-		}
-		
 		var doAuthentication = function(user){
 			User.authenticate($scope.user).then(function successCallback(response) {
 					if(response.data.success){
@@ -55,6 +51,12 @@ angular.module('UserCtrl', [])
 					doAuthentication($scope.user);
 				}
 				else console.log("nao criou usuario");
-			});	
+			});
+		}
+		
+		$scope.editUser = function(){
+			User.update($scope.current_user).then(function (response) {
+				$window.location.href = "/perfil/"+$scope.current_user.name;
+			});
 		}
 	}]);

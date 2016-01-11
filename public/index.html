@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="/assets/css/contest/detail.css">
 		<link rel="stylesheet" href="/assets/css/project/new-project.css">
 		<link rel="stylesheet" href="/assets/css/user/user.css">
+		<link rel="stylesheet" href="/assets/css/user/edit.css">
 
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-route/angular-route.js"></script>
@@ -55,7 +56,7 @@
 						<a href="">{{user.name}}</a>
 						<ul class="dropdown">
 							<li><a ng-href="/perfil/{{user.name}}">Perfil</a></li>
-							<li><a ng-href="/{{user.name}}">Editar perfil</a></li>
+							<li><a ng-href="/perfil/edit/{{user.name}}">Editar perfil</a></li>
 							<li><a ng-click="logout()" href="">Sair</a></li>
 						</ul>
 					</li>
@@ -78,12 +79,12 @@
 					<div class="small-12 columns">
 						<p class="slogan">EasyAd</p>
 						<p class="links">
-							<a href="#">Home</a>
-							<a href="#">Como funciona</a>
-							<a href="#">Competições</a>
-							<a href="#">Designers</a>
-							<a href="#">Faq</a>
-							<a href="#">Contact</a>
+							<a href="/">Home</a>
+							<a href="/como-funciona">Como funciona</a>
+							<a href="/competicoes">Competições</a>
+							<a href="/designers">Designers</a>
+							<a href="/">Faq</a>
+							<a href="/">Contact</a>
 						</p>
 						<p class="copywrite">Made with Love and JS by <br>Marlon Diego Casagranda França © 2015</p>
 					</div>

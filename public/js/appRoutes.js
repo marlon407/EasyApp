@@ -35,11 +35,23 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider',
 			templateUrl: 'views/contest/step2.html',
 			controller: 'ContestController'
 		})
+		.when('/competicoes/sucesso', {
+			templateUrl: 'views/contest/processing.html',
+			controller: 'ContestController'
+		})
+		.when('/competicoes/done', {
+			templateUrl: 'views/contest/done.html',
+			controller: 'ContestController'
+		})
+		.when('/competicoes/detalhes/:id', {
+			templateUrl: 'views/contest/projectDetails.html',
+			controller: 'ContestController'
+		})
 		.when('/competicoes/:id', {
 			templateUrl: 'views/contest/detail.html',
 			controller: 'ContestController'
 		})
-		.when('/projeto/novo', {
+		.when('/projeto/novo/:id', {
 			templateUrl: 'views/project/new.html',
 			controller: 'ProjectController'
 		})
@@ -49,6 +61,10 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider',
 		})
 		.when('/perfil/:username', {
 			templateUrl: 'views/user/user.html',
+			controller: 'UserController'
+		})
+		.when('/perfil/edit/:username', {
+			templateUrl: 'views/user/edit.html',
 			controller: 'UserController'
 		});
 		$locationProvider.html5Mode(true);

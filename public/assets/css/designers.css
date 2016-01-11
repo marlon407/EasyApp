@@ -27,18 +27,15 @@
   padding-top: 15px;
   padding-bottom: 0px;
   border-radius: 5px;
-  background: #2B2937;
+  border: 1px solid #2B2937;
   overflow: hidden;
 }
 .profile-card h4 {
   font-family: "Proxima Nova","proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 400;
-  color: #fff;
+  color: #222;
   font-size: 22px;
   line-height: 26px;
-}
-.profile-card h4 a{
-	color: #fff;
 }
 .profile-card h4 span {
   font-size: 16px;

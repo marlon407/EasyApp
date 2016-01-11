@@ -5,8 +5,8 @@ module.exports = function(app, Project, Images_Project) {
 			description: req.body.description,
 			date: req.body.date,
 			user_id: req.body.user_id,
+			contest_id: req.body.contest_id,
 		});
-		console.log(project);
 		project.save(function(err) {
       if (err) throw err;
       console.log('project created successfully');

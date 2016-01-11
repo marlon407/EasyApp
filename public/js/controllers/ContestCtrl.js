@@ -44,16 +44,21 @@ angular.module('ContestCtrl', [])
 				$scope.contest.username = $window.localStorage.getItem("username");
 				$scope.contest.type = $scope.adType.id;
 				$scope.contest.price = $scope.adType.price;
+				console.log($scope.adType.size_unit);
 				Contest.saveContest($scope.contest).then(function (response) {
 					if(response.data.success){
 						console.log("contest created");
 						Contest.saveImage(response.data.id.toString(),$scope.image_ids).then(function (res) {
 								console.log("images saved");
-								$window.location.href = "/competicoes";
+								$window.location.href = "/competicoes/sucesso";
 							});
 						}
 						else console.log("Contest error");
 				});
+			}
+			
+			$scope.new = function(){
+				$window.scrollTo(0, 0);
 			}
 			
 			$scope.uploadImage = function (input) {
@@ -81,6 +86,12 @@ angular.module('ContestCtrl', [])
 
 			$scope.getAllContests = function(){
 				Contest.getContests().then(function(response){
+					$scope.contests = response.data;
+				});
+			}
+			
+			$scope.getClosedContests = function(){
+				Contest.getClosedContests().then(function(response){
 					$scope.contests = response.data;
 				});
 			}
@@ -117,6 +128,20 @@ angular.module('ContestCtrl', [])
 							$(".intend_btn").prop("disabled", "disabled");
 						}
 						$(".intend_count").text(response.data.allByContest);
+					});
+				});
+			}
+			
+			$scope.showClosedContest = function(){
+				$window.scrollTo(0, 0); 
+				var role = $window.localStorage.getItem("userRole")
+				$scope.isDesigner = role == 1
+				console.log($scope.isDesigner);
+				Contest.getContestById($routeParams.id).then(function(response){
+					$scope.contest = response.data.contest[0];
+					
+					Contest.getIntentions($routeParams.id, $window.localStorage.getItem("userid")).then(function(response){
+						$scope.isPlaying = response.data.isPlaying;
 					});
 				});
 			}

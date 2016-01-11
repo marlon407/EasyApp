@@ -22,9 +22,10 @@
 	display: table;
 	border: 1px solid #bbb; 
 	border-radius: 4px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	width: 100%;
 	max-width: 900px;
+	background-color: #f4f4f6;
 }
 
 .event-date {
@@ -40,6 +41,7 @@
     border: 1px solid #eee;
     padding: 0 2rem;
     text-align: center;
+		background-color: white;
     font-size: 2rem; }
 
 .event-desc {
@@ -70,6 +72,7 @@
     font-size: 18px;
 		text-align: center;
 		font-family: "PT Sans";
+		background-color: white;
 	}
 	
 .competition-detail .contest-detail {
@@ -82,6 +85,7 @@
 	border-left: none;
 	border-right: none;
 	font-family: "PT Sans";
+	color: #608c28;
 }
 
 .competition-detail h4 {

@@ -11,26 +11,9 @@ module.exports = function(app, User, Contest, Project, Intention) {
       res.sendfile('./public/index.html'); // load our public/index.html file
   });
 
-  app.get('/setup', function(req, res) {
-    // create a sample user
-    var nick = new User({ 
-      name: 'admin', 
-      password: 'admin',
-      admin: true,
-			role: 0
-    });
-
-    // save the sample user
-    nick.save(function(err) {
-      if (err) throw err;
-      console.log('User saved successfully');
-      res.json({ success: true });
-    });
-  });
-	
 	//Get all users designers
 	app.get('/getAllDesigners', function(req, res) {
-    User.find({role:0}, function(err, users) {
+    User.find({role:1}, function(err, users) {
       res.json(users);
     });
   });
@@ -38,10 +21,14 @@ module.exports = function(app, User, Contest, Project, Intention) {
 	app.post('/createUser', function(req, res) {
     // create a sample user
     var user = new User({ 
-      name: req.body.name, 
+      email: req.body.email,
+			name: req.body.name,
       password: req.body.password,
       admin: false,
-			role: req.body.role
+			role: req.body.role,
+			created: new Date(),
+			place: "Planeta terra",
+			bio: "Sem biografia"
     });
 
     // save the sample user
@@ -51,6 +38,23 @@ module.exports = function(app, User, Contest, Project, Intention) {
       res.json({ success: true });
     });
   });
+	
+	app.post('/updateUser', function(req, res) {
+		var userid = req.body._id;
+		User.findOne({
+      _id: userid
+    }, function(err, user) {
+				user.name= req.body.name;
+				user.place= req.body.place;
+				user.bio= req.body.bio;
+				user.website= req.body.website;
+				user.save(function(err) {
+					if (err) throw err;
+					console.log('User saved successfully');
+					res.json({ success: true });
+				});
+			});
+	});
 
   // API ROUTES -------------------
 
@@ -61,7 +65,7 @@ module.exports = function(app, User, Contest, Project, Intention) {
   apiRoutes.post('/authenticate', function(req, res) {
     // find the user
     User.findOne({
-      name: req.body.name
+      email: req.body.email
     }, function(err, user) {
 
       if (err) throw err;

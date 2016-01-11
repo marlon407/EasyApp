@@ -2,6 +2,10 @@
 	margin-top: 12px;
 }
 
+.user-profile .title{
+	margin-top: 20px;
+}
+
 .user-profile .title h1{
 	font-family: "PT Sans";
 }
@@ -42,6 +46,12 @@
     display: inline-block;
     color: #32363e;
 		width: 100%;}
+
+	.user-profile .inquire .bio{
+		margin-top: 20px;}
+	.user-profile .inquire .bio .bio-item{
+		margin-bottom: 10px;
+		float: left;}
 
 .user-profile .inquire .box{
 	background: #fff;
@@ -144,10 +154,16 @@
 	color: #777;
 	line-height: 23px;
 	font-size: 14px;
-	padding: 20px;
+	padding: 10px 20px;
 	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+	margin-bottom: 0;
 }
 
 .ac-container input:checked ~ article.ac-small{
 	height: auto;
+}
+
+.ac-container article a{
+	padding:10px 20px;
+	display: block;
 }

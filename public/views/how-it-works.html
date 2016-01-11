@@ -46,7 +46,7 @@
 	<div class="square-block row">
 		<div class="square-block-content large-7 medium-7 columns">
 			<h3>Publique sua competição</h3>
-			<p>Após você determinar o prazo para upload dos projetos, sua competição esta pronta para ser lançada. Sua competição será adicionada a lista de competições abertar e visualizada por nossa comunidade de designers de todas as partes do mundo.</p>
+			<p>Após você determinar o prazo para upload das propostas, sua competição esta pronta para ser lançada. Sua competição será adicionada a lista de competições abertas e visualizada por nossa comunidade de designers de todas as partes do mundo.</p>
 		</div>
 		<div class="square-block-img large-5 medium-5 columns">
 			<span class="image-container"><img src="/assets/images/icons/category.png"></span>
@@ -102,7 +102,8 @@
 		</div>
 	</div>
 	<div class="break1 text-center">
-		<a href="/competicoes/novo" class="large button download-hero">Comece agora</a>
+		<a ng-if="user.name == null" href="/signup" class="large button download-hero">Comece agora ></a>
+		<a ng-if="user.name != null" href="competicoes/novo/" class="large button download-hero">Comece agora ></a>
 	</div>
 	
 	

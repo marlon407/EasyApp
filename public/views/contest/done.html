@@ -1,8 +1,8 @@
-<div class="competitions" data-ng-controller="ContestController" data-ng-init="getAllContests()">
+<div class="competitions" data-ng-controller="ContestController" data-ng-init="getClosedContests()">
 	<div class="section text-center header-info">
 		<div class="info">
 			<h1>Competições</h1>
-			<h3>Competições em aberto de nossos clientes</h3>
+			<h3>Competições encerradas dos nossos clientes</h3>
 		</div>
 		<hr>
 	</div>
@@ -17,7 +17,7 @@
 						<div class="left">
 							<h4 class="event-desc-header">{{cont.title}}</h4>
 							<p class="event-desc-detail"><span class="event-desc-time"></span>por: {{cont.username}}</p>
-							<a href="/competicoes/{{cont._id}}" class="rsvp button">Detalhes</a>
+							<a href="/competicoes/detalhes/{{cont._id}}" class="rsvp button">Detalhes</a>
 						</div>
 						<div class="right">
 							<span class="price">{{cont.price*0.8| currency:"R$"}}</span>
@@ -27,6 +27,6 @@
 				</article>
 		</div>
 	<div class="text-center">
-		<a href="/competicoes/done" class="read-more-link">Veja as competições já encerradas ></a>
+		<a href="/competicoes/" class="read-more-link">Veja as competições ainda abertas ></a>
 	</div>
 </div>

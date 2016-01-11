@@ -33,7 +33,7 @@
     position: relative;
     top: 80px;
     display: inline-block;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     padding: 10px;
     background: white;
     -webkit-transition: all 0.3s ease;
@@ -67,23 +67,23 @@
     transform: scale(1); }
 
 
-.new-contest-2 .inquire{
+.contest .inquire{
 	padding-top: 30px;
 	padding-bottom: 60px;
 	background: #f4f4f6;
 	position: relative;
 	z-index: 1;
 }
-.new-contest-2 .inquire .gorup{
+.contest .inquire .gorup{
 	border-bottom: 1px solid #e3e4e8;
 	margin-bottom: 50px;
 	padding-bottom: 30px;
 }
-	.new-contest-2 .inquire .header{
+	.contest .inquire .header{
 		padding-right: 15px;
 		float: left;
 	}
-	.new-contest-2 .inquire .header h3{
+	.contest .inquire .header h3{
 		font-size: 28px;
 		font-family: "PT Sans";
     font-weight: 500;
@@ -91,10 +91,10 @@
     color: #32363e;
 		text-rendering: optimizelegibility;
 	}
-	.new-contest-2 .inquire .desc{
+	.contest .inquire .desc{
 		padding-right: 15px;
 		float: left;}
-	.new-contest-2 .inquire .desc .field-title{
+	.contest .inquire .desc .field-title{
 		font-weight: 500;
     font-size: 19px;
     padding: 0;
@@ -103,24 +103,25 @@
     display: inline-block;
     color: #32363e;
 		width: 100%;}
-		.new-contest-2 input[type='text'], .new-contest-2 textarea, .new-contest-2 select{
-			padding: 5px 7px;
-			display: block;
-			color: #535865;
-			border: 1px solid #c1c5cd;
-			border-radius: 0;
-			background-color: #fff;
-			font-size: 16px;
-			width: 100%;
-			line-height: 1.6;
-			vertical-align: middle;
-		}
-		.new-contest-2 .field-title textarea{
-			padding-top: .6em;
-			padding-bottom: .6em;
-			line-height: 1.3;
-			min-height: 90px;
-		}
+	
+	.new-contest-2 input[type='text'], .new-contest-2 textarea, .new-contest-2 select{
+		padding: 5px 7px;
+		display: block;
+		color: #535865;
+		border: 1px solid #c1c5cd;
+		border-radius: 0;
+		background-color: #fff;
+		font-size: 16px;
+		width: 100%;
+		line-height: 1.6;
+		vertical-align: middle;
+	}
+	.new-contest-2 .field-title textarea{
+		padding-top: .6em;
+		padding-bottom: .6em;
+		line-height: 1.3;
+		min-height: 90px;
+	}
 
 		.options {
 			 list-style-type:none;

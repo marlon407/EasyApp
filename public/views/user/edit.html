@@ -1,0 +1,35 @@
+<div class="user-profile edit-user" ng-init="loadUser()">
+	<div class="section text-center header-info">
+		<div class="info">
+			<h1>Editar meu perfil</h1>
+		</div>
+		<hr>
+	</div>
+	<div class="inquire">
+		<div class="row gorup">
+			<div class="large-4 smal-12 header columns">
+				<h3>Informações gerais</h3>
+			</div>
+			<div class="large-8 small-12 desc columns">
+				<label class="field-title">Nome
+					<input type="text" ng-model="current_user.name" placeholder="João da Silva"/>
+				</label>
+				<label class="field-title">Bio
+					<textarea ng-model="current_user.bio" placeholder="Fale um pouco sobre você"></textarea>
+				</label>
+				<label class="field-title">Localização
+					<input type="text" ng-model="current_user.place" placeholder="Cidade/Estado"/>
+				</label>
+				<label class="field-title">Website
+					<input type="text" ng-model="current_user.website" placeholder="www.seusite.com"/>
+				</label>
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-4 smal-12 columns">
+				<a href="" ng-click="editUser()" class="button right">Salvar</a>
+			</div>
+		</div>
+	</div>
+</div>
