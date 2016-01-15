@@ -1,5 +1,5 @@
 
-module.exports = function(app, Contest, Images_Contest, Intention) {
+module.exports = function(app, Contest, Images_Contest, Intention, Project) {
 	app.post('/newContest', function(req, res) {
 		var contest = new Contest({ 
       title: req.body.title, 
@@ -49,9 +49,17 @@ module.exports = function(app, Contest, Images_Contest, Intention) {
     });
 	});
 	
+	app.post('/getAllProjectsByContest', function(req, res) {
+    console.log("getting projects by contest");
+		var contest_Id = req.body.contest_id
+    Project.find({contest_id: contest_Id},function(err, projects) {
+      res.json({projects:projects});
+    });
+	});
+	
 	app.get('/getClosedContests', function(req, res) {
     console.log("getting contests");
-    Contest.find({status: 2},function(err, closed) {
+    Contest.find({status: { $gt: 1 }},function(err, closed) {
       res.json(closed);
     });
 	});
@@ -66,8 +74,6 @@ module.exports = function(app, Contest, Images_Contest, Intention) {
     });
 	});
 	app.post('/setIntention', function(req, res) {
-		console.log(req.body.contest_id);
-		console.log(req.body.user_id);
     var intend = new Intention({
 			contest_id: req.body.contest_id,
 			user_id: req.body.user_id
@@ -80,6 +86,18 @@ module.exports = function(app, Contest, Images_Contest, Intention) {
 			});
     });
 	});
+	
+	app.post('/setContestWinner', function(req, res) {
+		var contest_id = req.body.contest_id;
+		var project_id = req.body.project_id;
+		Project.update({_id: project_id}, {place:1}, function(){
+			Contest.update(	{_id: contest_id}, {status:3}, function(){
+				console.log('Project wiiner chose');
+				res.json({sucess:0});	
+			});	
+		});
+	});
+	
 	app.post('/getIntentions', function(req, res) {
 		console.log('getIntentions');
 		console.log(req.body.contest_id);

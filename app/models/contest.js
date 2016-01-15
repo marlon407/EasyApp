@@ -15,7 +15,7 @@ module.exports = mongoose.model('Contest', new Schema({
 		username: String,
 		type: Number,
 		price: Number,
-		status: Number,// {0: not ready, 1: paid, 2: closed}
+		status: Number,// {0: not ready, 1: paid, 2: voting, 3:closed}
 		sizex: Number,
 		sizey: Number,
 		size_unit: String

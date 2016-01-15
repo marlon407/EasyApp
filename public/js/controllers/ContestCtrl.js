@@ -136,13 +136,20 @@ angular.module('ContestCtrl', [])
 				$window.scrollTo(0, 0); 
 				var role = $window.localStorage.getItem("userRole")
 				$scope.isDesigner = role == 1
-				console.log($scope.isDesigner);
 				Contest.getContestById($routeParams.id).then(function(response){
 					$scope.contest = response.data.contest[0];
-					
-					Contest.getIntentions($routeParams.id, $window.localStorage.getItem("userid")).then(function(response){
-						$scope.isPlaying = response.data.isPlaying;
+					console.log($scope.contest)
+					Contest.getAllProjectsByContest($routeParams.id).then(function(response){
+						$scope.projects = response.data.projects;
 					});
+				});
+			}
+			
+			$scope.setWinner = function(project){
+				console.log(project);
+				console.log("winner");
+				Contest.setContestWinner(project._id, $scope.contest._id).then(function(response){
+					location.reload();
 				});
 			}
 			

@@ -40,7 +40,6 @@ angular.module('UserCtrl', [])
 				$scope.current_user = response.data.user;
 				$scope.user_contests = response.data.contests;
 				$scope.user_projects = response.data.projects;
-				console.log($scope.user_projects.length, $scope.user_contests.length);
 			});
 		}
 		

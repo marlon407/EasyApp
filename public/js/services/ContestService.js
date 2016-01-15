@@ -31,6 +31,14 @@ angular.module('ContestService', []).factory('Contest', ['$http', '$window', fun
 			};
 			return $http(req);
 		},
+		getAllProjectsByContest: function(contest_id){
+			var req = {
+					method: 'POST',
+					url: '/getAllProjectsByContest/',
+					data: {contest_id:contest_id}
+				};
+				return $http(req);
+		},
 		getContestById: function(id){
 			var req = {
 				method: 'GET',
@@ -54,6 +62,14 @@ angular.module('ContestService', []).factory('Contest', ['$http', '$window', fun
 				 method: 'POST',
 				 url: '/getIntentions',
 				 data: {contest_id:contest_id,user_id:user_id}
+			};
+			return $http(req);
+		},
+		setContestWinner: function(project_id, contest_id){
+			var req = {
+				 method: 'POST',
+				 url: '/setContestWinner',
+				 data: {project_id:project_id, contest_id:contest_id}
 			};
 			return $http(req);
 		},

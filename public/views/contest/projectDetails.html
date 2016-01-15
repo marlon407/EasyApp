@@ -24,6 +24,20 @@
 	<div class="inquire">
 		<div class="text-center">
 			<h3>Confira os projetos que concoreram</h3>
+			<div class="large-8 medium-8 small-12 columns contest-projects">
+				<section class="ac-container" ng-repeat="project in projects">
+					<div>
+						<input id="{{project._id}}" name="accordion-1" type="checkbox" />
+						<label for="{{project._id}}">{{project.title}}</label>
+						<article class="ac-small">
+							<p>{{project.description}}</p>
+							<a href="/projeto/{{project._id}}">Ver mais</a>
+							<p ng-show="project.place == 1">Vencedor</p>
+							<button ng-show="contest.status == 0" ng-click="setWinner(project)" confirm="Confirma?" class="button">Escolher como vencedor</button>
+						</article>
+					</div>
+				</section>
+			</div>
 		</div>
 	</div>
 </div>
