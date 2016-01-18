@@ -33,7 +33,7 @@
 							<p>{{project.description}}</p>
 							<a href="/projeto/{{project._id}}">Ver mais</a>
 							<p ng-show="project.place == 1">Vencedor</p>
-							<button ng-show="contest.status == 0" ng-click="setWinner(project)" confirm="Confirma?" class="button">Escolher como vencedor</button>
+							<button ng-show="contest.status == 2" ng-click="setWinner(project)" confirm="Confirma?" class="button">Escolher como vencedor</button>
 						</article>
 					</div>
 				</section>

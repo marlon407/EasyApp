@@ -42,11 +42,22 @@
 				<ul class="small-block-grid-3 medium-block-grid-3 large-block-grid-4 images-grid">
 				</ul>
 			</div>
-			<div class="general-info row" ng-show="isDesigner">
+			<div class="general-info row" ng-show="role == 1">
 				<h2 class="text-center group">Designer</h2>
 				<button ng-click="setIntention()" class="button intend_btn">Participar</button>
 				<span class="intend_count"></span>
 				<a href="/projeto/novo/{{contest._id}}" class="button">Submeter meu projeto</a>
+			</div>
+			<div class="general-info row">
+				<h2 class="text-center group">Comentários</h2>
+				<label ng-show="role != null" class="field-title">Comentário
+					<textarea ng-model="comment.text" placeholder="Qual sua dúvida?"></textarea>
+					<button ng-click="postComment(comment)" class="button">Postar</button>
+				</label>
+				<div class="comment" ng-repeat="com in comments">
+					<h4 class="comment-text">"{{com.text}}"</h4>
+					<h5 class="comment-author">por: {{com.user_name}}</h5>
+				</div>
 			</div>
 		</div>
 	</div>

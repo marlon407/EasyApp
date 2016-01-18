@@ -107,9 +107,9 @@ angular.module('ContestCtrl', [])
 			
 			$scope.showContest = function(){
 				$window.scrollTo(0, 0); 
-				var role = $window.localStorage.getItem("userRole")
-				$scope.isDesigner = role == 1
-				console.log($scope.isDesigner);
+				var role = $window.localStorage.getItem("userRole");
+				console.log(role);
+				$scope.role = role;
 				Contest.getContestById($routeParams.id).then(function(response){
 					$scope.contest = response.data.contest[0];
 					QB.createSession(QBUser, function(err, result) {
@@ -129,6 +129,18 @@ angular.module('ContestCtrl', [])
 						}
 						$(".intend_count").text(response.data.allByContest);
 					});
+					Contest.getComments($routeParams.id).then(function(response){
+						$scope.comments = response.data.allComments;
+					});
+				});
+			}
+			
+			$scope.postComment = function(comment){
+				comment.contest_id = $routeParams.id;
+				comment.user_id = $window.localStorage.getItem("userid");
+				comment.user_name = $window.localStorage.getItem("username");
+				Contest.postComment(comment).then(function(response){
+					$scope.comments = response.data.allComments;
 				});
 			}
 			

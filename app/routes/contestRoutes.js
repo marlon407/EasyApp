@@ -1,5 +1,5 @@
 
-module.exports = function(app, Contest, Images_Contest, Intention, Project) {
+module.exports = function(app, Contest, Images_Contest, Intention, Project, Comment) {
 	app.post('/newContest', function(req, res) {
 		var contest = new Contest({ 
       title: req.body.title, 
@@ -108,6 +108,30 @@ module.exports = function(app, Contest, Images_Contest, Intention, Project) {
 				res.json({ allByContest: allByContest.length, isPlaying:allbyUser.length > 0});	
 			});
 		});
+	});
+	
+	app.post('/getComments', function(req, res) {
+		console.log('getIntentions');
+		console.log(req.body.contest_id);
+		Comment.find({contest_id: req.body.contest_id},function(err, allComments) {
+			res.json({ allComments: allComments });	
+		});
+	});
+	
+	app.post('/postComment', function(req, res) {
+		var comment = new Comment({
+			contest_id: req.body.comment.contest_id,
+			user_id: req.body.comment.user_id,
+			user_name: req.body.comment.user_name,
+			text: req.body.comment.text
+		});
+		comment.save(function(err) {
+      if (err) throw err;
+      console.log('intention created successfully');
+			Comment.find({contest_id: req.body.comment.contest_id},function(err, allComments) {
+				res.json({ allComments: allComments });	
+			});
+    });
 	});
 	
 }

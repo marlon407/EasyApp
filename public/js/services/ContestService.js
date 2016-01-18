@@ -65,6 +65,22 @@ angular.module('ContestService', []).factory('Contest', ['$http', '$window', fun
 			};
 			return $http(req);
 		},
+		getComments: function(contest_id){
+			var req = {
+				 method: 'POST',
+				 url: '/getComments',
+				 data: {contest_id:contest_id}
+			};
+			return $http(req);
+		},
+		postComment: function(comment){
+			var req = {
+				 method: 'POST',
+				 url: '/postComment',
+				 data: {comment:comment}
+			};
+			return $http(req);
+		},
 		setContestWinner: function(project_id, contest_id){
 			var req = {
 				 method: 'POST',

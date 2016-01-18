@@ -15,6 +15,7 @@ var Images_Contest = require('./app/models/images_contest'); // get mongoose mod
 var Intention    = require('./app/models/intention'); // get mongoose model
 var Images_Project = require('./app/models/images_project'); // get mongoose model
 var Project    = require('./app/models/project'); // get mongoose model
+var Comment    = require('./app/models/comment'); // get mongoose model
 
 
 // =======================
@@ -38,7 +39,7 @@ app.use(morgan('dev'));
 // routes ================
 // =======================
 require('./app/routes.js')(app, User, Contest, Project, Intention)
-require('./app/routes/contestRoutes.js')(app, Contest, Images_Contest, Intention, Project)
+require('./app/routes/contestRoutes.js')(app, Contest, Images_Contest, Intention, Project, Comment)
 require('./app/routes/projectRoutes.js')(app, Project, Images_Project)
 
 
