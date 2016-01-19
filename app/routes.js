@@ -10,6 +10,24 @@ module.exports = function(app, User, Contest, Project, Intention) {
   app.get('/', function(req, res) {
       res.sendfile('./public/index.html'); // load our public/index.html file
   });
+	
+	// route to show a random message (GET http://localhost:8080/api/)
+  app.get('/getUser', function(req, res) {
+    User.findOne({
+      name: req.headers['username']
+    }, function(err, user) {
+      if (err) throw err;
+      if (!user) {
+        res.json({ success: false, message: 'Authentication failed. User not found.' });
+      } else if (user){
+				Contest.find({user_id: user._id},function(err, contests) {
+					Project.find({user_id: user._id},function(err, projects) {
+						res.json({user: user, contests:contests, projects:projects, success:true});
+					});
+				});
+			};
+    });
+  });
 
 	//Get all users designers
 	app.get('/getAllDesigners', function(req, res) {
@@ -132,24 +150,6 @@ module.exports = function(app, User, Contest, Project, Intention) {
   // route to show a random message (GET http://localhost:8080/api/)
   apiRoutes.get('/', function(req, res) {
     res.json({ message: 'Welcome to the coolest API on earth!' });
-  });
-	
-	// route to show a random message (GET http://localhost:8080/api/)
-  apiRoutes.get('/getUser', function(req, res) {
-    User.findOne({
-      name: req.headers['username']
-    }, function(err, user) {
-      if (err) throw err;
-      if (!user) {
-        res.json({ success: false, message: 'Authentication failed. User not found.' });
-      } else if (user){
-				Contest.find({user_id: user._id},function(err, contests) {
-					Project.find({user_id: user._id},function(err, projects) {
-						res.json({user: user, contests:contests, projects:projects});
-					});
-				});
-			};
-    });
   });
 
   // route to return all users (GET http://localhost:8080/api/users)

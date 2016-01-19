@@ -66,6 +66,9 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider',
 		.when('/perfil/edit/:username', {
 			templateUrl: 'views/user/edit.html',
 			controller: 'UserController'
+		})
+		.when('/erro', {
+			templateUrl: 'views/not-found.html'
 		});
 		$locationProvider.html5Mode(true);
 }]);

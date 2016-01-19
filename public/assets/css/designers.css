@@ -24,11 +24,16 @@
 }
 
 .profile-card {
-  padding-top: 15px;
-  padding-bottom: 0px;
+  padding-top: 0;
+  padding-bottom: 0;
   border-radius: 5px;
   border: 1px solid #2B2937;
   overflow: hidden;
+}
+
+.profile-card .columns{
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 .profile-card h4 {
   font-family: "Proxima Nova","proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -51,11 +56,11 @@
 }
 .profile-card .button-group .button {
   margin-bottom: 0;
-  border-top: none;
+  border-top: 1px solid #2B2937 !important;
   border-left: none !important;
-  border-right: 2px solid #2B2937;
+	border-right: 1px solid #2B2937 !important;
   border-bottom: none;
-  background-color: #394165;
+  background-color: white;
   height: 70px;
   font-weight: 200;
   font-size: 16px;
@@ -66,15 +71,15 @@
 
 .profile-card .button-group .button .desc{
 	font-size: 16px;
-  color: #8C91A7;
 	font-weight: normal;
 	padding-top: 15px;
+	color: #222222;
 }
 .profile-card .button-group .button span {
   display: block;
   font-size: 24px;
   font-weight: 600;
-  color: #fff;
+  color: #222222;
 }
 .profile-card p {
   line-height: 1;

@@ -78,17 +78,25 @@ ul{
 	font-style: italic;
 }
 
+.home .break{
+	background-repeat: no-repeat;
+}
+
 .home .break1{
 	background-image: url("/assets/images/break2.jpg");
 }
 
-.home .break1 h1{
+.home .break2{
+	background-image: url("/assets/images/break2.jpg");
+}
+
+.home .break h1{
 	color: #fff;
 	font-family: "PT Sans";
 	padding-top: 160px;
 }
 
-.home .break1 h3{
+.home .break h3{
 	color: #fff;
 	font-family: "PT Sans";
 }

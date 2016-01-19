@@ -3,7 +3,7 @@
 		<div class="small-12 medium-6 large-6 columns">
 			<h1 class="left">{{current_user.name}}</h1>
 		</div>
-		<div class="small-12 medium-6 large-6 columns">
+		<div ng-show="isOwner" class="small-12 medium-6 large-6 columns">
 			<a href="/perfil/edit/{{current_user.name}}" class="button edit-btn right">Editar perfil</a>
 		</div>
 	</div>
@@ -56,10 +56,10 @@
 				<section class="ac-container" ng-repeat="contest in user_contests">
 					<div>
 						<input id="{{contest._id}}" name="accordion-1" type="checkbox" />
-						<label for="{{contest._id}}">{{contest.title}}</label>
+						<label for="{{contest._id}}">{{contest.title}} - <i>( {{ contest.status|translateStatus }} )</i></label>
 						<article class="ac-small">
 							<p>{{contest.content_detail}}</p>
-							<a href="/competicoes/{{contest._id}}">Ver mais</a>
+							<a href="/competicoes/{{contest._id}}">Detalhes da competição</a>
 							<a href="/competicoes/detalhes/{{contest._id}}">Ver projetos</a>
 							</div>
 						</article>

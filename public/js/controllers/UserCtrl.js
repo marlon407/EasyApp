@@ -1,4 +1,23 @@
 angular.module('UserCtrl', [])
+.filter('translateStatus', ['Contest',  function(Contest) {
+  return function(status_id) {
+		var text;
+		switch (status_id) {
+			case 1:
+					text = "Aberta";
+					break;
+			case 2:
+					text = "Escolhendo vencedor";
+					break;
+			case 3:
+					text = "Concluída";
+					break;
+			default:
+					text = "Aguardando aprovação";
+		}
+		return text;	
+	};
+}])
 	.controller('UserController', ['$scope',  'User', '$window','$routeParams',  function($scope, User, $window, $routeParams) {
 		$scope.user = {}
 		$scope.GetAll = function(){
@@ -37,9 +56,19 @@ angular.module('UserCtrl', [])
 		
 		$scope.loadUser = function(){
 			User.getUser($routeParams.username).then(function (response) {
-				$scope.current_user = response.data.user;
-				$scope.user_contests = response.data.contests;
-				$scope.user_projects = response.data.projects;
+				$scope.isOwner = false;
+				console.log(response.data);
+				if(response.data.success == true){
+					if (response.data.user._id == $window.localStorage.getItem("userid")){
+						$scope.isOwner = true;
+					}
+					$scope.current_user = response.data.user;
+					$scope.user_contests = response.data.contests;
+					$scope.user_projects = response.data.projects;
+				}
+				else{
+					$window.location.href = "/erro";
+				}
 			});
 		}
 		
@@ -50,6 +79,19 @@ angular.module('UserCtrl', [])
 					doAuthentication($scope.user);
 				}
 				else console.log("nao criou usuario");
+			});
+		}
+		
+		$scope.loadEdit = function(){
+			User.getUser($routeParams.username).then(function (response) {
+				if(response.data.success == true && response.data.user._id == $window.localStorage.getItem("userid")){
+					$scope.current_user = response.data.user;
+					$scope.user_contests = response.data.contests;
+					$scope.user_projects = response.data.projects;
+				}
+				else{
+					$window.location.href = "/";
+				}
 			});
 		}
 		

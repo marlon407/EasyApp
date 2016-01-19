@@ -12,9 +12,8 @@ angular.module('UserService', []).factory('User', ['$http', '$window', function(
 		getUser: function(username){
 			var req = {
 				method: 'GET',
-				url: 'api/getUser',
+				url: '/getUser',
 				headers: {
-					'x-access-token': $window.localStorage.getItem("token"),
 					'username': username
 				}
 			};
