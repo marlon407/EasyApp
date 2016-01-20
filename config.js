@@ -4,7 +4,7 @@ module.exports = {
 		//'database': 'mongodb://localhost:27017/jwtauth',
 		'NODE_AWS_KEY': "AKIAJTFCGVIF3KVKRXEA",
 		'NODE_AWS_SECRET': "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",
-		'EC2-MongoPass': "O4VxwCKEcaML"
+		'EC2-MongoPass': "O4VxwCKEcaML",
 		'adTypes': [
 			{
 				'id': 1,
