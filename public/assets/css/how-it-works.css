@@ -36,6 +36,10 @@ hr{
 	display: block;
 }
 
+.how-it-works-page p{
+	text-align: justify;
+}
+
 .square-block{
 	margin: 0 auto 14px;
 	font-family: "PT Sans";
@@ -109,7 +113,6 @@ hr{
 	font-size: 44px;
 	font-weight: normal;
 	color: #565a5c;
-	font-family: 'PT Sans' !important;
 }
 
 .how-it-works-page .tabs dd.active a, .tabs .tab-title.active a{
