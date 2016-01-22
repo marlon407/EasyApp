@@ -44,7 +44,7 @@ module.exports = function(app, Contest, Images_Contest, Intention, Project, Comm
 	
 	app.get('/getContests', function(req, res) {
     console.log("getting contests");
-    Contest.find({status: 0},function(err, all) {
+    Contest.find({status: 1},function(err, all) {
       res.json(all);
     });
 	});

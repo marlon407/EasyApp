@@ -6,7 +6,92 @@
 		</div>
 		<hr>
 	</div>
-
+	
+	<div class="inquire">
+		<div class="row gorup">
+			<div class="large-4 smal-12 header columns">
+				<ul class="tabs" data-tab role="tablist">
+					<li class="tab-title tab-links active" role="presentation"><a href="#panel2-1">O que é a EasyAd</a></li>
+					<li class="tab-title tab-links" role="presentation"><a href="#panel2-2">Quem procura a EasyAd?</a></li>
+					<li class="tab-title tab-links" role="presentation"><a href="#panel2-3">Quem faz os designs?</a></li>
+				</ul>
+			</div>
+			
+			<div class="large-8 small-12 desc columns">
+				<div class="tabs-content">
+					<section role="tabpanel" aria-hidden="true" class="content active" id="panel2-1">
+						<h3 class="how-title">Quem Somos</h3>
+						<p>A EasyAd é uma plataforma pioneira no Brasil, que usa um modelo de negócio conhecido como <a href="https://endeavor.org.br/crowdsourcing/">crowdsourcing</a>, visando alcançar a melhor comunicação visual, a um preço acessível.<br> O objetivo é fazer com que anúncios de qualidade sejam acessíveis para toda a comunidade, ajudando pequenos e médios empreendedores a divulgar seu produto ou serviço de uma forma profissional porém que caiba no seu bolso.</p><br>
+						
+						<h3 class="how-title">Como Usar</h3>
+						<div class="square-block-img row">
+							<div class="square-block-content row large-12 columns">
+								<div class="large-7 medium-6 columns">
+									<h3>Faça uma breve descrição do seu projeto</h3>
+									<p>Diga aos nossos designer sobre o que é seu negocio, produto ou serviço. Através dessas informações nossos profissionais vão se basear para criar o anúncio do jeito que você o idealiza.</p>
+								</div>
+								<div class="large-5 medium-6 columns">
+									<span><img src="/assets/images/icons/describe.png"></span>
+								</div>
+							</div>
+						</div>
+						
+						<div class="square-block-img row">
+							<div class="square-block-content row large-12 columns">
+								<div class="large-5 medium-6 columns">
+									<span><img src="/assets/images/icons/feedback.png"></span>
+								</div>
+								<div class="large-7 medium-6 columns">
+									<h3>Receba dezenas de propostas</h3>
+									<p>Designer irão submeter seus projetos dia e noite. Visite seu perfil e acompanhe o painel de controle da sua competição diariamente para ver os projetos.</p>
+								</div>
+								
+							</div>
+						</div>
+						
+						<div class="square-block-img row">
+							<div class="square-block-content row large-12 columns">
+								<div class="large-7 medium-6 columns">
+									<h3>Escolha seu vencedor</h3>
+									<p>Em até 7 dias você escolhe o seu projeto favorito e assina os termos de uso do produto. Nós tranferimos o dinheiro da premiação para o designer. Você baixa a proposta vencedora e usa-a como você preferir</p>
+								</div>
+								<div class="large-5 medium-6 columns">
+									<span><img src="/assets/images/icons/pick-winner.png"></span>
+								</div>
+							</div>
+						</div>
+						<div class="text-center">
+							<a ng-if="user.name == null" href="/signup" class="large button download-hero">Comece agora</a>
+							<a ng-if="user.name != null" href="competicoes/novo/" class="large button download-hero">Comece agora</a>
+						</div>
+					</section>
+					
+					<section role="tabpanel" aria-hidden="true" class="content" id="panel2-2">
+						<h3 class="how-title">Quem procura a EasyAd?</h3>
+						<p>Qual quer pessoa pode procurar a EasyAd para ter seu design feito com qualidade. Entretanto, nossa plataforma é voltada para pequenos e médios empreendedores, que querem expandir seus negócios, porém esbarram em altos valores cobrados por agencias de publicidade, ou que por falta de opção, desenham eles mesmos o conteúdo. Tambem focamos em pessoas que querem apresentar qualquer tipo de conteúdo de uma forma dinamica e profissional em eventos e congressos por exemplo.<br> Mesmo focando nestes mercados, nossa plataforma esta preparada para atender inúmeros outros casos.</p>
+						<p>Se ainda tem alguma dúvida, <a href="contact">fale aqui conosco</a> e ficaremos muito felizes em esclarecer qualquer coisa.</p>
+						<div class="text-center">
+							<a ng-if="user.name == null" href="/signup" class="large button download-hero">Comece agora</a>
+							<a ng-if="user.name != null" href="competicoes/novo/" class="large button download-hero">Comece agora</a>
+						</div>
+					</section>
+					
+					<section role="tabpanel" aria-hidden="true" class="content" id="panel2-3">
+						<h3 class="how-title">Quem faz os designs?</h3>
+						<p>A EasyAd conta com uma comunidade de talentosos designers prontos para fazer que seu conteúdo seja apresentado da melhor forma possível.<br> Entre esses designers, estão estudantes de publicidade e propaganda, que possuem um gigantesco potencial, porém não encontram lugar no mercado de trabalho para mostrar seus talentos e criatividade. Aqui também você encontra profissionais já inseridos no mercado de trabalho, e que estão dispostos a ter uma renda extra, os famosos <i>freelancers</i>.
+						<br>Quer conferir mais? veja aqui a <a href="/designers">lista dos nossos designers</a><br>
+							Você pode também fazer parte dessa comunidade, <a href="/signup">se tornando um designer</a>.
+						</p>
+					</section>
+				</div>
+				
+			</div>
+		</div>
+		
+		
+	</div>
+	
+	<div class="hide">
 	<div class="square-block row">
 		<div class="square-block-content large-12 columns">
 			<h3>A EasyAd faz com que anúncios profissionais e de qualidade sejam acessíveis para toda a comunidade.</h3>
@@ -106,5 +191,5 @@
 		<a ng-if="user.name != null" href="competicoes/novo/" class="large button download-hero">Comece agora</a>
 	</div>
 	
-	
+	</div>
 </div>

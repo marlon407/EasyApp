@@ -47,6 +47,9 @@ hr{
 	color: #000;
 }
 
+.square-block-img{
+	margin: auto auto 15px !important;
+}
 .square-block-img .image-container{
 	display: block;
 	padding: 40px;
@@ -59,19 +62,20 @@ hr{
 }
 
 .square-block-content{
-	padding: 40px;
+	margin: auto !important;
+	padding: 14px;
 	background-color: #f2f2f2;
 	border: 1px solid #608c28;
 }
 
 .square-block-content h3{
 	color: #575757;
-	font-size: 28px;
+	font-size: 20px;
 	line-height: 30px;
 	margin: 0 0 16px 0;
 	font-style: normal;
 	font-weight: bold;
-	text-align: center;
+	text-align: left;
 }
 
 .square-block-content p{
@@ -90,4 +94,24 @@ hr{
 	padding: 20px 50;
 	border-radius: 4px;
 }
+
+.how-it-works-page .tab-links a{
+	color: #608c28 !important;
+	background-color: transparent !important;
+	outline: none;
+}
+
+.tabs-content .content{
+	padding: 0;
+}
+
+.tabs-content .how-title{
+	font-size: 44px;
+	font-weight: normal;
+	color: #565a5c;
+	font-family: 'PT Sans' !important;
+}
+
+.how-it-works-page .tabs dd.active a, .tabs .tab-title.active a{
+	font-weight: bold;
 }

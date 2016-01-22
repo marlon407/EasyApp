@@ -21,6 +21,7 @@ angular.module('MainCtrl', [])
 		
 		$scope.howitworks = function(){
 			$window.scrollTo(0, 0);
+			$(document).foundation();
 		}
 		
 	}]);

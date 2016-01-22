@@ -26,7 +26,7 @@ ul{
 	padding-top: 150px;	
 }
 
-.hero .info h1{
+.hero .info h1, .hero .info h3{
 	color: #fff;
 	font-family: 'PT Sans' !important;
 }
@@ -227,4 +227,16 @@ ul{
 .user-profile {
 	margin-bottom: 30px;
 	min-height: 60vh;
+}
+
+.hero .info .easy {
+	color: #5bbc2e !important;
+}
+
+.inquire{
+	padding-top: 30px;
+	padding-bottom: 60px;
+	background: #f4f4f6;
+	position: relative;
+	z-index: 1;
 }
