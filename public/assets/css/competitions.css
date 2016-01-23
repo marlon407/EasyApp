@@ -74,6 +74,12 @@
 		font-family: "PT Sans";
 		background-color: white;
 	}
+	.event-desc-left{
+		float: left;
+	}
+	.event-desc-right{
+		float: right;
+	}
 	
 .competition-detail .contest-detail {
 	max-width: 900px;
@@ -97,4 +103,28 @@
 	font-family: "PT Sans";
 	padding: 0 20px;
 	font-size: 18px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 630px)and (-webkit-min-device-pixel-ratio: 2) {
+	
+	.competitions .header-info .info {
+		padding-top: 20px;
+	}
+	
+	.competitions .header-info .info h1{
+		font-size: 38px;
+	}
+	
+	hr{
+		margin: 20px auto 40px	
+	}
+	
+	.event-desc-left, .event-desc-right{
+		float: none;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.event-desc .price{
+		padding: 8px;
+	}
 }

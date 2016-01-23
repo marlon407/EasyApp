@@ -82,6 +82,10 @@ angular.module('UserCtrl', [])
 			});
 		}
 		
+		$scope.loadSignup = function(){
+			$window.scrollTo(0, 0);
+		}
+		
 		$scope.loadEdit = function(){
 			User.getUser($routeParams.username).then(function (response) {
 				if(response.data.success == true && response.data.user._id == $window.localStorage.getItem("userid")){

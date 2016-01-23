@@ -8,3 +8,9 @@
 .top-bar .title-area h1 span {
 	color: #5383d3;
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 630px)and (-webkit-min-device-pixel-ratio: 2) {
+	.login-signup .options li{
+		margin-bottom: 10px;
+	}
+}

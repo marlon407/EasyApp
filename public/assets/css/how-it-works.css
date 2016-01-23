@@ -118,3 +118,26 @@ hr{
 .how-it-works-page .tabs dd.active a, .tabs .tab-title.active a{
 	font-weight: bold;
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 630px)and (-webkit-min-device-pixel-ratio: 2) {
+	
+	.how-it-works-page .header-info .info {
+		padding-top: 20px;
+	}
+	
+	.how-it-works-page .header-info .info h1{
+		font-size: 38px;
+	}
+	.tabs-content .how-title{
+		font-size: 36px;
+	}
+	
+	hr{
+		margin: 20px auto 40px	
+	}
+	
+	.square-block-img img{
+		width: 100px;
+		margin-bottom: 10px;
+	}
+}

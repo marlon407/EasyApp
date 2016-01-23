@@ -159,9 +159,6 @@ ul{
 		font-family: "PT Sans";
 		font-size: 18px;
 	}
-  @media only screen and (max-width: 40em) {
-    .where .columns {
-      margin-bottom: 5rem; } }
 
 .features {
   text-align: center; }
@@ -185,10 +182,6 @@ ul{
       display: table-cell;
       text-align: center;
       vertical-align: middle; }
-  @media only screen and (max-width: 40em) {
-    .features .columns {
-      margin-bottom: 5rem; } }
-
 
 .footer {
   background-color: #292c2f;
@@ -240,3 +233,26 @@ ul{
 	position: relative;
 	z-index: 1;
 }
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 630px)and (-webkit-min-device-pixel-ratio: 2) {
+	.hero{
+		height: 95vh;
+	}
+	
+	.hero .info {
+		padding: 100px 15px;
+	}
+	
+	.features .columns {
+		margin-bottom: 70px;
+	}
+	.footer{
+		padding: 0;
+	}
+	.footer .links a{
+		padding: 0;
+	}
+	
+}
+

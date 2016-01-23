@@ -9,17 +9,17 @@
 
 		<div ng-repeat="cont in contests track by cont._id">
 				<article class="event row">
-					<div class="event-date medium-3 small-12 columns">
+					<div class="event-date medium-3 hide-for-small-only columns">
 						<p class="event-month">{{cont.duration | date:"MM"|tranformMonth}}</p>
 						<p class="event-day">{{cont.duration | date:"dd"}}</p>
 					</div>
 					<div class="event-desc medium-9 small-12 columns">
-						<div class="left">
+						<div class="event-desc-left">
 							<h4 class="event-desc-header">{{cont.title}}</h4>
 							<p class="event-desc-detail"><span class="event-desc-time"></span>por: {{cont.username}}</p>
 							<a href="/competicoes/{{cont._id}}" class="rsvp button">Detalhes</a>
 						</div>
-						<div class="right">
+						<div class="event-desc-right">
 							<span class="price">{{cont.price*0.8| currency:"R$"}}</span>
 							<span class="price">{{cont.type|translate}}</span>
 						</div>

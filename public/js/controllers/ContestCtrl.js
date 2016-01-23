@@ -85,12 +85,14 @@ angular.module('ContestCtrl', [])
     	}
 
 			$scope.getAllContests = function(){
+				$window.scrollTo(0, 0);
 				Contest.getContests().then(function(response){
 					$scope.contests = response.data;
 				});
 			}
 			
 			$scope.getClosedContests = function(){
+				$window.scrollTo(0, 0);
 				Contest.getClosedContests().then(function(response){
 					$scope.contests = response.data;
 				});
