@@ -1,6 +1,6 @@
 module.exports = {
     'secret': 'ilovescotchyscotch',
-    'database': 'mongodb://admin:admin@ds047812.mongolab.com:47812/jwtauth',
+    'database': 'mongodb://root:root@ds041571.mongolab.com:41571/easyad',
 		//'database': 'mongodb://localhost:27017/jwtauth',
 		'NODE_AWS_KEY': "AKIAJTFCGVIF3KVKRXEA",
 		'NODE_AWS_SECRET': "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",
