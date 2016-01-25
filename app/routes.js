@@ -66,6 +66,9 @@ module.exports = function(app, User, Contest, Project, Intention) {
 				user.place= req.body.place;
 				user.bio= req.body.bio;
 				user.website= req.body.website;
+				user.first_name= req.body.first_name;
+				user.last_name= req.body.last_name;
+				user.phone= req.body.phone;
 				user.save(function(err) {
 					if (err) throw err;
 					console.log('User saved successfully');

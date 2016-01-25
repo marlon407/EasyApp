@@ -11,14 +11,23 @@
 				<h3>Informações gerais</h3>
 			</div>
 			<div class="large-8 small-12 desc columns">
-				<label class="field-title">Nome
-					<input type="text" ng-model="current_user.name" placeholder="João da Silva"/>
+				<label class="field-title">Nome do usuário  <i>(Nome que identificará seu perfil)</i>
+					<input type="text" ng-model="current_user.name" placeholder="joao2016"/>
+				</label>
+				<label class="field-title">Seu Nome
+					<input type="text" ng-model="current_user.first_name" placeholder="João"/>
+				</label>
+				<label class="field-title">Sobrenome
+					<input type="text" ng-model="current_user.last_name" placeholder="da Silva"/>
 				</label>
 				<label class="field-title">Bio
 					<textarea ng-model="current_user.bio" placeholder="Fale um pouco sobre você"></textarea>
 				</label>
 				<label class="field-title">Localização
 					<input type="text" ng-model="current_user.place" placeholder="Cidade/Estado"/>
+				</label>
+				<label class="field-title">Telefone  <i>(Opcional - Não será publico)</i>
+					<input type="text" ng-model="current_user.phone" placeholder="(11) 88888-8888"/>
 				</label>
 				<label class="field-title">Website
 					<input type="text" ng-model="current_user.website" placeholder="www.seusite.com"/>

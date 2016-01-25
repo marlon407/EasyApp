@@ -46,6 +46,9 @@
     display: inline-block;
     color: #32363e;
 		width: 100%;}
+		.user-profile .inquire .desc .field-title i{
+			font-size: 16px;
+		}
 
 	.user-profile .inquire .bio{
 		margin-top: 20px;}
