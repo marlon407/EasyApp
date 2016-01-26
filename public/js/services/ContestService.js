@@ -96,19 +96,19 @@ angular.module('ContestService', []).factory('Contest', ['$http', '$window', fun
 				'id': 1,
 				'type': "static",
 				'description': "Banner Statico",
-				'price': 199.00,
+				'price': 299.00,
 			},
 			{
 				'id': 2,
 				'type': "dinamic",
 				'description': "Banner Dinâmico",
-				'price': 199.00,
+				'price': 499.00,
 			},
 	{
 				'id': 3,
 				'type': "flayer",
-				'description': "Flayer",
-				'price': 499.00,
+				'description': "Folheto",
+				'price': 399.00,
 			},
 			{
 				'id': 4,
@@ -126,13 +126,13 @@ angular.module('ContestService', []).factory('Contest', ['$http', '$window', fun
 				'id': 6,
 				'type': "news",
 				'description': "Jornal/Revista",
-				'price': 199.00,
+				'price': 399.00,
 			},
 			{
 				'id': 7,
-				'type': "internet",
-				'description': "Internet",
-				'price': 199.00,
+				'type': "folder",
+				'description': "Folder",
+				'price': 699.00,
 			},
 			{
 				'id': 8,
@@ -144,7 +144,13 @@ angular.module('ContestService', []).factory('Contest', ['$http', '$window', fun
 				'id': 9,
 				'type': "facebook-cover",
 				'description': "Capa para facebook",
-				'price': 199.00,
+				'price': 299.00,
+			},
+			{
+				'id': 10,
+				'type': "frontage",
+				'description': "Fachada",
+				'price': 399.00,
 			},
 		]
 			return adTypes;

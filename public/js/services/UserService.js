@@ -46,6 +46,14 @@ angular.module('UserService', []).factory('User', ['$http', '$window', function(
 				url: "/getAllDesigners"
 			};
 			return $http(req);
-		}
+		}, 
+		activeuser: function(user){
+			var req = {
+				 method: 'POST',
+				 url: '/activeuser',
+				 data: user
+			};
+			return $http(req);
+		},
 	}
 }]);

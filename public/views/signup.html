@@ -1,11 +1,20 @@
 <div class="row login-page login-signup" ng-init="loadSignup()">
 	<div class="large-6 columns large-offset-3">
+		<div data-alert class="alert-box warning" ng-show="userTaken != undefined">
+			{{userTaken}}
+		</div>
     <h1 class="text-center"><span class="fa fa-sign-in"></span> Registrar-se</h1>    <!-- LOGIN FORM -->
 		<div class="form-group">
 				<input type="text" class="form-control" placeholder="Seu email" ng-model="user.email" name="email">
 		</div>
 		<div class="form-group">
-				<input type="text" class="form-control" placeholder="Seu nome" ng-model="user.name" name="name">
+				<input type="text" class="form-control" placeholder="Seu nome" ng-model="user.first_name" name="name">
+		</div>
+		<div class="form-group">
+				<input type="text" class="form-control" placeholder="Sobrenome" ng-model="user.last_name" name="name">
+		</div>
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Nome do usuário (deve ser único)" ng-model="user.name" name="name">
 		</div>
 		<div class="form-group">
 				<input type="password" placeholder="Sua senha" class="form-control" ng-model="user.password" name="password">

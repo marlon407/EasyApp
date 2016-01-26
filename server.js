@@ -17,7 +17,6 @@ var Images_Project = require('./app/models/images_project'); // get mongoose mod
 var Project    = require('./app/models/project'); // get mongoose model
 var Comment    = require('./app/models/comment'); // get mongoose model
 
-
 // =======================
 // configuration =========
 // =======================

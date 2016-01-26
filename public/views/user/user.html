@@ -1,11 +1,14 @@
 <div class="user-profile" ng-init="loadUser()">
 	<div class="row title">
 		<div class="small-12 medium-6 large-6 columns">
-			<h1 class="left">{{current_user.first_name}} {{current_user.last_name}}</h1>
-			<h4 class="left"><i>({{current_user.name}})</i></h4>
+			<h1 class="left fullWidth">{{current_user.first_name}} {{current_user.last_name}}</h1>
+			<h4 class="left fullWidth"><i>({{current_user.name}})</i></h4>
 		</div>
 		<div ng-show="isOwner" class="small-12 medium-6 large-6 columns">
 			<a href="/perfil/edit/{{current_user.name}}" class="button edit-btn right">Editar perfil</a>
+		</div>
+		<div ng-show="isOwner && !active" class="small-12 medium-6 large-6 columns">
+			<button ng-click="activeuser()" class="button edit-btn right">Ativar usuário</a>
 		</div>
 	</div>
 	<div class="inquire">

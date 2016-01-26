@@ -1,10 +1,22 @@
 module.exports = {
     'secret': 'ilovescotchyscotch',
-    'database': 'mongodb://root:root@ds041571.mongolab.com:41571/easyad',
+		'database': 'mongodb://admin:admin@ds047812.mongolab.com:47812/jwtauth',
+    //'database': 'mongodb://root:root@ds041571.mongolab.com:41571/easyad',
 		//'database': 'mongodb://localhost:27017/jwtauth',
 		'NODE_AWS_KEY': "AKIAJTFCGVIF3KVKRXEA",
 		'NODE_AWS_SECRET': "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",
 		'EC2-MongoPass': "O4VxwCKEcaML",
+		'email': {
+			'service': 'gmail',
+			'auth': {
+				'user':  'easyadbr@gmail.com',
+				'pass': 'easyad2016'
+				}
+		},
+		'confirEmail': {
+			'subject': 'EasyAd - Confirmação de email',
+			'text': '<br><h3>Sua inscrição na EasyAd foi confirmada.</h3><br><h3>Para a seguraça de todos nossos usuários, é necessario que você ative seu perfil. Acesse nosso portal, vá até seu perfil, e lá você vera um botão de ativação.</h3><br><h4>Equipe EasyAd</h4>'
+		},
 		'adTypes': [
 			{
 				'id': 1,

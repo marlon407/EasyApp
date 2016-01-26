@@ -1,5 +1,7 @@
 var jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var express= require('express');
+var nodemailer = require('nodemailer'); //Send email
+var config = require('../config'); // get our config file
 
 module.exports = function(app, User, Contest, Project, Intention) {
 
@@ -37,23 +39,45 @@ module.exports = function(app, User, Contest, Project, Intention) {
   });
 	
 	app.post('/createUser', function(req, res) {
-    // create a sample user
-    var user = new User({ 
-      email: req.body.email,
-			name: req.body.name,
-      password: req.body.password,
-      admin: false,
-			role: req.body.role,
-			created: new Date(),
-			place: "Planeta terra",
-			bio: "Sem biografia"
-    });
+		 User.find({name:req.body.name}, function(err, user) {
+			 console.log(user.length);
+      if (user.length > 0){
+				console.log('Username taken '+ req.body.name);
+				res.json({ success: false });
+			}
+			 else{
+					var user = new User({ 
+						email: req.body.email,
+						name: req.body.name,
+						first_name: req.body.first_name,
+						last_name: req.body.last_name,
+						password: req.body.password,
+						admin: false,
+						active: false,
+						role: req.body.role,
+						created: new Date(),
+						place: "Planeta terra",
+						bio: "Sem biografia"
+					});
 
-    // save the sample user
-    user.save(function(err) {
-      if (err) throw err;
-      console.log('User saved successfully');
-      res.json({ success: true });
+					user.save(function(err) {
+						if (err) throw err;
+						console.log('User saved successfully');
+						//Send confirm email
+						var transpoter = nodemailer.createTransport(config.email);
+						var mailOptions = {
+							from: config.email.auth.user, 
+							to: user.email
+						};
+						mailOptions.subject = config.confirEmail.subject;
+						mailOptions.html = "<h2>Olá "+user.first_name+"</h2>"+config.confirEmail.text;
+						transpoter.sendMail(mailOptions, function(error, res){
+							if(error)	throw error;
+							else console.log("Email sent to "+user.email);
+						})
+						res.json({ success: true });
+					});
+			 }
     });
   });
 	
@@ -72,6 +96,20 @@ module.exports = function(app, User, Contest, Project, Intention) {
 				user.save(function(err) {
 					if (err) throw err;
 					console.log('User saved successfully');
+					res.json({ success: true });
+				});
+			});
+	});
+	
+	app.post('/activeuser', function(req, res) {
+		var userid = req.body._id;
+		User.findOne({
+      _id: userid
+    }, function(err, user) {
+				user.active= true;
+				user.save(function(err) {
+					if (err) throw err;
+					console.log('User activeted successfully');
 					res.json({ success: true });
 				});
 			});

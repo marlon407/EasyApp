@@ -1,13 +1,14 @@
 {
-  "name": "node-token-jwt",
+  "name": "EasyAd",
   "main": "server.js",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "dependencies": {
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "jsonwebtoken": "^5.4.0",
     "mongoose": "^4.1.10",
     "morgan": "^1.6.1",
-    "quickblox": "^1.16.1"
+    "quickblox": "^1.16.1",
+		"nodemailer": "0.3.29"
   }
 }

@@ -234,6 +234,13 @@ ul{
 	z-index: 1;
 }
 
+.fullWidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 630px)and (-webkit-min-device-pixel-ratio: 2) {
 	.hero{
@@ -256,3 +263,8 @@ ul{
 	
 }
 
+
+.beta {
+	font-size: 16px;
+	color: #E87E04;
+}

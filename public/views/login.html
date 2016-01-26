@@ -1,5 +1,8 @@
 <div class="row login-page" ng-init="loadSignup()">
 	<div class="large-6 columns large-offset-3">
+		<div data-alert class="alert-box warning" ng-show="loginError != undefined">
+			{{loginError}}
+		</div>
 		<h1 class="text-center"><span class="fa fa-sign-in"></span>Entrar</h1>
 		<!-- show any messages that come back with authentication -->
 		<div ng-show="{{message.length > 0}}" class="alert alert-danger">{{message}}</div>

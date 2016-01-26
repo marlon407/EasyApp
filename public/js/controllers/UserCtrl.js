@@ -24,7 +24,7 @@ angular.module('UserCtrl', [])
 			$scope.users = User.get();
 		}
 		
-		var doAuthentication = function(user){
+		var doAuthentication = function(user, path){
 			User.authenticate($scope.user).then(function successCallback(response) {
 					if(response.data.success){
 						$window.localStorage.setItem("token", response.data.token);
@@ -32,7 +32,7 @@ angular.module('UserCtrl', [])
 						$window.localStorage.setItem("userid", response.data.user._id);
 						$window.localStorage.setItem("userLogged", response.data.user);
 						$window.localStorage.setItem("userRole", response.data.user.role);
-						$window.location.href = "/";
+						$window.location.href = path;
 					}
 				else{
 						$window.localStorage.removeItem("token");
@@ -42,6 +42,7 @@ angular.module('UserCtrl', [])
 						$window.localStorage.removeItem("userRole");
 						console.log("no login")
 						$scope.user = undefined;
+						$scope.loginError = "Usuário ou Senha não encontrado!";
 					}
 				
 				}, 
@@ -51,7 +52,7 @@ angular.module('UserCtrl', [])
 		}
 		
 		$scope.login = function(){
-			doAuthentication($scope.user);
+			doAuthentication($scope.user, "/");
 		}
 		
 		$scope.loadUser = function(){
@@ -61,6 +62,7 @@ angular.module('UserCtrl', [])
 				if(response.data.success == true){
 					if (response.data.user._id == $window.localStorage.getItem("userid")){
 						$scope.isOwner = true;
+						$scope.active = response.data.user.active;
 					}
 					$scope.current_user = response.data.user;
 					$scope.user_contests = response.data.contests;
@@ -75,10 +77,12 @@ angular.module('UserCtrl', [])
 		$scope.create = function(){
 			User.createUser($scope.user).then(function (response) {
 				if(response.data.success){
-					console.log("user created");
-					doAuthentication($scope.user);
+					doAuthentication($scope.user, "perfil/edit/"+$scope.user.name);
 				}
-				else console.log("nao criou usuario");
+				else {
+					console.log("nao criou usuario");
+					$scope.userTaken = "Nome de usuário já cadastrado! Por favor escolha outro.";
+				}
 			});
 		}
 		
@@ -102,6 +106,13 @@ angular.module('UserCtrl', [])
 		$scope.editUser = function(){
 			User.update($scope.current_user).then(function (response) {
 				$window.location.href = "/perfil/"+$scope.current_user.name;
+			});
+		}
+		
+		$scope.activeuser = function(){
+			User.activeuser($scope.current_user).then(function (response) {
+				$scope.active = true;
+				alert("Usuário ativado com sucesso!");
 			});
 		}
 	}]);

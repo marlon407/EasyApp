@@ -75,8 +75,9 @@ angular.module('ContestCtrl', [])
 									console.log(err);
 								} else {
 									document.getElementById(inputFile.type+inputFile.size).parentElement.remove();
-									var imageHTML = "<li class='list-in-grid'><img src='" + QB.content.privateUrl(img_response.id+"/download") + "' /></li>";
-								$(".images-area").append(imageHTML);
+									var path = QB.content.privateUrl(response.data.images[i].image_id+"/download");
+									var imageHTML = "<li><a target='_blank' href='"+path+"' data-lightbox='image-1' data-title='My caption'><img src='"+path+"'></a></li>"
+									$('.images-grid').append(imageHTML);
 									$scope.image_ids.push(img_response.id);
 								}
 							});
@@ -103,7 +104,7 @@ angular.module('ContestCtrl', [])
 					console.log(response.data.count)
 					$(".intend_btn").text("Participando");
 					$(".intend_btn").prop("disabled", "disabled");
-					$(".intend_count").text(response.data.count);
+					$(".intend_count").text(response.data.count+ " participante(s)");
 				});
 			}
 			
@@ -119,7 +120,8 @@ angular.module('ContestCtrl', [])
 								console.log('Something went wrong: ' + err);
 							} else {
 								for(var i = 0; i< response.data.images.length; i++){
-									var imageHTML = "<li><img class='image-in-grid' src='" + 		QB.content.privateUrl(response.data.images[i].image_id+"/download") + "' /></li>";
+									var path = QB.content.privateUrl(response.data.images[i].image_id+"/download");
+									var imageHTML = "<li><a target='_blank' href='"+path+"' data-lightbox='image-1' data-title='My caption'><img src='"+path+"'></a></li>"
 									$('.images-grid').append(imageHTML);
 								}
 							}
@@ -129,7 +131,7 @@ angular.module('ContestCtrl', [])
 							$(".intend_btn").text("Participando");
 							$(".intend_btn").prop("disabled", "disabled");
 						}
-						$(".intend_count").text(response.data.allByContest);
+						$(".intend_count").text(response.data.allByContest+" participante(s)");
 					});
 					Contest.getComments($routeParams.id).then(function(response){
 						$scope.comments = response.data.allComments;
