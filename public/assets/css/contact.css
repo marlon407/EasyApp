@@ -1,0 +1,24 @@
+.contact{
+	margin-bottom: 30px;
+	min-height: 60vh;
+}
+
+.contact .header-info .info{
+	padding-top: 50px;
+}
+.contact .header-info .info h1{
+	font-family: "PT Sans";
+	font-size: 52px;
+	line-height: 1.2em;
+	text-transform: none;
+	letter-spacing: 0px;
+	font-weight: 700;
+	font-style: normal;
+	color: #608c28;
+}
+
+.contact .large{
+	font-size: 35px;
+	color: #608c28;
+	margin: 0 10px;
+}

@@ -1,6 +1,6 @@
 angular.module('MainCtrl', [])
 	.controller('MainController', ['$scope',  'User', '$window', '$routeParams', function($scope, User, $window, $routeParams) {
-		
+		$window.scrollTo(0, 0);
 		$scope.user = {name:localStorage.getItem("username"), password:localStorage.getItem("password")}
 		$scope.logout = function(){
 			$window.localStorage.removeItem("token");
@@ -22,6 +22,13 @@ angular.module('MainCtrl', [])
 		$scope.howitworks = function(){
 			$window.scrollTo(0, 0);
 			$(document).foundation();
+		}
+		
+		$scope.sendMessage = function(){
+			console.log($scope.contact);
+			User.sendMessage($scope.contact).then(function(response){
+				$scope.status = "Mensagem enviada"
+			});
 		}
 		
 	}]);

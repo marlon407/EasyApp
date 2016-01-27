@@ -55,5 +55,13 @@ angular.module('UserService', []).factory('User', ['$http', '$window', function(
 			};
 			return $http(req);
 		},
+		sendMessage: function(contact){
+			var req = {
+				 method: 'POST',
+				 url: '/sendMessage',
+				 data: {contact:contact}
+			};
+			return $http(req);
+		},
 	}
 }]);

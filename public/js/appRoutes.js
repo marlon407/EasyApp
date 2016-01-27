@@ -23,6 +23,10 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider',
 			templateUrl: 'views/designers.html',
 			controller: 'MainController'
 		})
+		.when('/contato', {
+			templateUrl: 'views/contact.html',
+			controller: 'MainController'
+		})
 		.when('/competicoes', {
 			templateUrl: 'views/contest/show.html',
 			controller: 'MainController'

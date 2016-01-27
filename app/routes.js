@@ -114,6 +114,23 @@ module.exports = function(app, User, Contest, Project, Intention) {
 				});
 			});
 	});
+	
+	app.post('/sendMessage', function(req, res) {
+		var contact = req.body.contact;
+		console.log(req.body.contact);
+		console.log(req.body);
+		var transpoter = nodemailer.createTransport(config.email);
+						var mailOptions = {
+							from: config.email.auth.user, 
+							to: config.email.auth.user
+						};
+						mailOptions.subject = contact.subject;
+						mailOptions.text = "---Name----"+contact.name+"--Email--"+contact.email+"--Text--"+contact.text;;
+						transpoter.sendMail(mailOptions, function(error, res){
+							if(error)	throw error;
+							else console.log("Email form "+contact.email);
+						})
+	});
 
   // API ROUTES -------------------
 
