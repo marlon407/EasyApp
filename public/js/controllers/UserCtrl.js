@@ -109,10 +109,14 @@ angular.module('UserCtrl', [])
 			});
 		}
 		
-		$scope.activeuser = function(){
-			User.activeuser($scope.current_user).then(function (response) {
-				$scope.active = true;
-				alert("Usuário ativado com sucesso!");
+		$scope.activeUser = function(){
+			$scope.status = "Atenticando usuário, aguarda..";
+			$scope.message = "";
+			console.log($routeParams.userId);
+			User.activeuser($routeParams.userId).then(function (response) {
+				$scope.status = "Usuário confirmado";
+				$scope.message = "Seu usuário foi ativado! Agora você já pode aproveitar todos os benefícios da EasyAd";
+				$scope.showLink = "Usuário confirmado";
 			});
 		}
 	}]);

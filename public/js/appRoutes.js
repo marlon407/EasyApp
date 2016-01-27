@@ -69,6 +69,10 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider',
 		})
 		.when('/erro', {
 			templateUrl: 'views/not-found.html'
+		})
+		.when('/activeuser', {
+			templateUrl: 'views/user/validating.html',
+			controller: 'UserController'
 		});
 		$locationProvider.html5Mode(true);
 }]);

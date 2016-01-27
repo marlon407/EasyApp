@@ -51,7 +51,7 @@ angular.module('UserService', []).factory('User', ['$http', '$window', function(
 			var req = {
 				 method: 'POST',
 				 url: '/activeuser',
-				 data: user
+				 data: {userId:user}
 			};
 			return $http(req);
 		},
