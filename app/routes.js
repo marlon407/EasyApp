@@ -70,7 +70,7 @@ module.exports = function(app, User, Contest, Project, Intention) {
 							to: user.email
 						};
 						mailOptions.subject = config.confirEmail.subject;
-						mailOptions.html = "<h2>Olá "+user.first_name+"</h2>"+config.confirEmail.text+"<a href='easyad.com.br/activeuser?userId="+user._id+"'>Ativar agora</a><br><h4>Equipe EasyAd</h4>"
+						mailOptions.html = "<a href='easyad.com.br/activeuser?userId="+user._id+"'>Ativar agora</a><br><h4>Equipe EasyAd</h4>"
 						transpoter.sendMail(mailOptions, function(error, res){
 							if(error)	throw error;
 							else console.log("Email sent to "+user.email);
