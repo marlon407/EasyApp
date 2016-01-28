@@ -13,15 +13,13 @@
 				<p>{{contest.companyName}}</p>
 				<h4>Descrição do produto/empresa e publico alvo:</h4>
 				<p>{{contest.business_desc}}</p>
-				<h4>Tipo de indústria:</h4>
-				<p>{{contest.industry}}</p>
 			</div>
 			<div class="general-info">
 				<h2 class="text-center group">Detalhes da competição</h2>
 				<h4>Tipo de anúncio:</h4>
 				<p>{{contest.type|translate}}</p>
-				<h4>Tamanho:</h4>
-				<p>{{contest.sizex}} x {{contest.sizey}} {{contest.size_unit}}</p>
+				<h4 ng-show="contest.sizex">Tamanho:</h4>
+				<p ng-show="contest.sizex">{{contest.sizex}} x {{contest.sizey}} {{contest.size_unit}}</p>
 				<h4>Descrição do projeto:</h4>
 				<p>{{contest.content_detail}}</p>
 				<h4>Descrição do produto/empresa e publico alvo:</h4>

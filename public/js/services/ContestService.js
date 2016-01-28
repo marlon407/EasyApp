@@ -152,6 +152,12 @@ angular.module('ContestService', []).factory('Contest', ['$http', '$window', fun
 				'description': "Fachada",
 				'price': 399.00,
 			},
+			{
+				'id': 10,
+				'type': "package",
+				'description': "Embaagem",
+				'price': 499.00,
+			},
 		]
 			return adTypes;
 		},

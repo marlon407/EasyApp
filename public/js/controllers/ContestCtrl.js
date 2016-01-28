@@ -11,8 +11,8 @@ angular.module('ContestCtrl', [])
 	.controller('ContestController', ['$scope', 'Contest', '$window','$routeParams', 
 		function($scope, Contest, $window, $routeParams){
 			$scope.newContest = function(){
-				$scope.contest = {}
-				$scope.image_ids = []
+				$scope.contest = {duration:"7", size_unit:"cm"};
+				$scope.image_ids = [];
 				$window.scrollTo(0, 0);
 			}
 			
@@ -30,31 +30,54 @@ angular.module('ContestCtrl', [])
 			var CONFIG = {};
 
 			QB.init(QBApp.appId, QBApp.authKey, QBApp.authSecret, CONFIG);
+			
+			var formValidade = function(contest){
+				console.log(contest);
+				if(contest.companyName == undefined){
+					$scope.error = true;
+				}
+				if(contest.business_desc == undefined){
+					$scope.error = true;
+				}
+				if(contest.title == undefined){
+					$scope.error = true;
+				}
+				if(contest.content_detail == undefined){
+					$scope.error = true;
+				}
+				console.log($scope.error);
+				return $scope.error == true;
+			}
 
 			$scope.saveContest = function(){
-				$scope.adType = {}
-				var findType = Contest.getAllPrices().filter(function( obj ) {
-					if(obj.type == $routeParams.type) return $scope.adType = obj;
-				});
-				var someDate = new Date();
-				var numberOfDaysToAdd = parseInt($scope.contest.duration);
-				someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
-				$scope.contest.duration = someDate;
-				$scope.contest.user = $window.localStorage.getItem("userid");
-				$scope.contest.username = $window.localStorage.getItem("username");
-				$scope.contest.type = $scope.adType.id;
-				$scope.contest.price = $scope.adType.price;
-				console.log($scope.adType.size_unit);
-				Contest.saveContest($scope.contest).then(function (response) {
-					if(response.data.success){
-						console.log("contest created");
-						Contest.saveImage(response.data.id.toString(),$scope.image_ids).then(function (res) {
-								console.log("images saved");
-								$window.location.href = "/competicoes/sucesso";
-							});
-						}
-						else console.log("Contest error");
-				});
+				if(formValidade($scope.contest)){
+					$window.scrollTo(0, 0);
+				}
+				else{
+					$scope.adType = {}
+					var findType = Contest.getAllPrices().filter(function( obj ) {
+						if(obj.type == $routeParams.type) return $scope.adType = obj;
+					});
+					var someDate = new Date();
+					var numberOfDaysToAdd = parseInt($scope.contest.duration);
+					someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
+					$scope.contest.duration = someDate;
+					$scope.contest.user = $window.localStorage.getItem("userid");
+					$scope.contest.username = $window.localStorage.getItem("username");
+					$scope.contest.type = $scope.adType.id;
+					$scope.contest.price = $scope.adType.price;
+					console.log($scope.adType.size_unit);
+					Contest.saveContest($scope.contest).then(function (response) {
+						if(response.data.success){
+							console.log("contest created");
+							Contest.saveImage(response.data.id.toString(),$scope.image_ids).then(function (res) {
+									console.log("images saved");
+									$window.location.href = "/competicoes/sucesso";
+								});
+							}
+							else console.log("Contest error");
+					});
+				}
 			}
 			
 			$scope.new = function(){

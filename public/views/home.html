@@ -48,8 +48,7 @@
 			<h3>Posters</h3>
 		</div>
 		<div class="medium-12 columns">
-			<a ng-if="user.name == null" href="/signup" class="read-more-link">Comece agora ></a>
-			<a ng-if="user.name != null" href="competicoes/novo/" class="read-more-link">Comece agora ></a>
+			<a href="/como-funciona" class="read-more-link">Veja como funciona ></a>
 		</div>
 	</div>
 
@@ -110,7 +109,8 @@
       </div>
 			<div class="medium-12 columns">
 				<h1>Criar o seu anúncio é Facil</h1>
-				<a href="/como-funciona" class="read-more-link">Saiba mais ></a>
+				<a ng-if="user.name == null" href="/signup" class="read-more-link">Comece agora ></a>
+				<a ng-if="user.name != null" href="competicoes/novo/" class="read-more-link">Comece agora ></a>
 			</div>
     </div>
 </div>

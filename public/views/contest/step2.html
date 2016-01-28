@@ -7,102 +7,108 @@
 		<hr>
 	</div>
 	<div class="inquire">
-		<div class="row gorup">
-			<div class="large-4 smal-12 header columns">
-				<h3>Informações gerais</h3>
-			</div>
-			<div class="large-8 small-12 desc columns">
-				<label class="field-title">Qual o nome de sua organização?
-					<input ng-model="contest.companyName" type="text" placeholder="Ex. Google" />
-				</label>
-				<label class="field-title">Descreva o que seu produto ou organização faz e qual o publico alvo
-					<textarea ng-model="contest.business_desc" placeholder="Ex. Somos um loja de discos e temos discos para todo os gostos"></textarea>
-				</label>
-				<label class="field-title">Selecione seu tipo de indústria
-					<select ng-model="contest.industry">
-						<option selected value="1">Tecnologia</option>
-						<option value="2">Comercio</option>
-						<option value="3">Serviços</option>
-						<option value="4">Naval</option>
-					</select>
-				</label>
-			</div>
-		</div>
-	
-		<div class="row gorup">
-			<div class="large-4 smal-12 header columns">
-				<h3>Detalhes do conteudo</h3>
-			</div>
-			<div class="large-8 small-12 desc columns">
-				<label class="field-title">De um titulo para sua competição
-					<input type="text" ng-model="contest.title" placeholder="Criar um banner para loja de quadrinhos" />
-				</label>
-				
-				<label class="field-title">Descreva o que você quer desenhar
-					<textarea ng-model="contest.content_detail"></textarea>
-					<span class="details">Describe your aims and requirements in detail here — the more specific, the better. Tell the designers what is required, but also let them know where they’re free to be creative.</span>
-				</label>
-				
-				<label class="field-title">Tamanho <i>(opcional)</i>
-				<ul class="row">
-					<li class="large-3 columns">
-						 	<input ng-model="contest.sizey" type="text" placeholder="altura" />
-					</li>
-					<li class="large-1 columns">
-							<p class="text-center between-sizes"> por </p>
-					</li>
-					<li class="large-3 columns">
-							<input ng-model="contest.sizex" type="text" placeholder="comprimento" />
-					</li>
-					<li class="large-4 columns end">
-						<select ng-model="contest.size_unit">
-							<option value="cm" selected>centimetros</option>
-							<option value="meters">metros</option>
-							<option value="pixel">pixels</option>
+		<form name="form" class="css-form" novalidate>
+			<div class="row gorup">
+				<div class="large-4 smal-12 header columns">
+					<h3>Informações gerais</h3>
+				</div>
+				<div class="large-8 small-12 desc columns">
+					<div data-alert class="alert-box warning" ng-show="error != undefined">
+						Por favor preencha todos os dados em branco!
+					</div>
+					<label class="field-title">Qual o nome de sua organização?
+						<input type="text" ng-model="contest.companyName" name="companyName" required="" placeholder="Ex. Google"/>
+					</label>
+					<label class="field-title">Descreva o que seu produto ou organização faz e qual o publico alvo
+						<textarea ng-model="contest.business_desc" required=""  placeholder="Ex. Somos um loja de discos e temos discos para todo os gostos"></textarea>
+					</label>
+					<label class="field-title">Selecione seu tipo de indústria
+						<select ng-model="contest.industry">
+							<option selected value="1">Tecnologia</option>
+							<option value="2">Comércio</option>
+							<option value="3">Serviços</option>
+							<option value="4">Naval</option>
+							<option value="5">Outro</option>
 						</select>
-					</li>
-				</ul>
-				<span class="details">Tamanho que voce planeja para seu flayer, poster, banner ou midia desejada</span>
-				</label>
+					</label>
+				</div>
 			</div>
-		</div>
+	
+			<div class="row gorup">
+				<div class="large-4 smal-12 header columns">
+					<h3>Detalhes do conteudo</h3>
+				</div>
+				<div class="large-8 small-12 desc columns">
+					<label class="field-title">De um titulo para sua competição
+						<input type="text" required="" ng-model="contest.title" placeholder="Criar um banner para loja de quadrinhos" />
+					</label>
+
+					<label class="field-title">Descreva o que você quer desenhar
+						<textarea required="" ng-model="contest.content_detail"></textarea>
+						<span class="details">Descreva aqui qual seu objetivo - quanto mais específico melhor. Conte para nossos designer o que é enssencial, mas tambeém deixe claro que eles devem ser criativos.</span>
+					</label>
+
+					<label class="field-title">Tamanho <i>(opcional)</i>
+					<ul class="row">
+						<li class="large-3 columns">
+								<input ng-model="contest.sizey" type="text" placeholder="altura" />
+						</li>
+						<li class="large-1 columns">
+								<p class="text-center between-sizes"> por </p>
+						</li>
+						<li class="large-3 columns">
+								<input ng-model="contest.sizex" type="text" placeholder="comprimento" />
+						</li>
+						<li class="large-4 columns end">
+							<select ng-model="contest.size_unit">
+								<option value="cm">centimetros</option>
+								<option value="meters" selected>metros</option>
+								<option value="pixel">pixels</option>
+							</select>
+						</li>
+					</ul>
+					<span class="details">Tamanho que voce planeja para seu flayer, poster, banner ou midia desejada</span>
+					</label>
+				</div>
+			</div>
 		
-		<div class="row gorup">
-			<div class="large-4 smal-12 header columns">
-				<h3>Mais..</h3>
+			<div class="row gorup">
+				<div class="large-4 smal-12 header columns">
+					<h3>Mais..</h3>
+				</div>
+				<div class="large-8 small-12 desc columns">
+					<label class="field-title">Alguma outra informação que você queira dizer para nossos designers?
+						<textarea ng-model="contest.more_detail"></textarea>
+					</label>
+					<label class="field-title">Você tem alguma imagem ou documento que posssa ser útil?
+						 <input type="file" onchange="angular.element(this).scope().uploadImage(this)" />
+						<span class="details">Ex. Seu logo, fotos, ilustrações, idéias, etc..</span>
+					</label>
+					<ul class="small-block-grid-3 medium-block-grid-3 large-block-grid-3 images-area"></ul>
+					<label class="field-title">De um prazo para upload dos projetos</label>
+					<ul class="options row">
+						<li class="large-4 columns">
+								<input type="radio" name="option" ng-model="contest.duration" value="7"/>
+								<label for="contest.duration">7 Dias</label>
+						</li>
+						<li class="large-4 columns">
+								<input type="radio" name="option" ng-model="contest.duration" value="14"/>
+								<label for="contest.duration">14 Dias</label>
+						</li>
+						<li class="large-4 columns">
+								<input type="radio" name="option" ng-model="contest.duration" value="21"/>
+								<label for="contest.duration">21 Dias</label>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<div class="large-8 small-12 desc columns">
-				<label class="field-title">Alguma outra informação que você queira dizer para nossos designers?
-					<textarea ng-model="contest.more_detail"></textarea>
-				</label>
-				<label class="field-title">Você tem alguma imagem ou documento que posssa ser útil?
-					 <input type="file" onchange="angular.element(this).scope().uploadImage(this)" />
-					<span class="details">Ex. Seu logo, fotos, ilustrações, idéias, etc..</span>
-				</label>
-				<ul class="small-block-grid-3 medium-block-grid-3 large-block-grid-3 images-area"></ul>
-				<label class="field-title">De um prazo para upload dos projetos</label>
-				<ul class="options row">
-					<li class="large-4 columns">
-						 	<input type="radio" name="option" ng-model="contest.duration" value="7" checked/>
-							<label for="contest.duration">7 Dias</label>
-					</li>
-					<li class="large-4 columns">
-							<input type="radio" name="option" ng-model="contest.duration" value="14"/>
-							<label for="contest.duration">14 Dias</label>
-					</li>
-					<li class="large-4 columns">
-							<input type="radio" name="option" ng-model="contest.duration" value="21"/>
-							<label for="contest.duration">21 Dias</label>
-					</li>
-				</ul>
-			</div>
-		</div>
 		
-		<div class="row">
-			<div class="large-4 smal-12 header columns">
-				<a href="" ng-click="saveContest()" class="button right">Continue</a>
+			<div class="row">
+				<div class="large-4 smal-12 header columns">
+					<input type="submit" ng-click="saveContest()" class="button right" value="Continuar" />
+				</div>
 			</div>
-		</div>
+		</form>
 		
 	</div>
 </div>
