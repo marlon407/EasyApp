@@ -15,7 +15,7 @@ module.exports = {
 		},
 		'confirEmail': {
 			'subject': 'EasyAd - Confirmação de email',
-			'text': '<br><h3>Sua inscrição na EasyAd foi confirmada.</h3><br><h3>Para a seguraça de todos nossos usuários, é necessario que você ative seu perfil. Por favor, acesse o link a seguir para a ativação.</h3><br>'
+			'text': '<br><h3>Sua inscrição na EasyAd foi confirmada.</h3><br><h3>Para a seguraça de todos nossos usuários, é necessário que você ative seu perfil. Por favor, acesse o link a seguir para a ativação.</h3><br>'
 		},
 		'adTypes': [
 			{
