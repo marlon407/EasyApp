@@ -37,9 +37,9 @@ app.use(morgan('dev'));
 // =======================
 // routes ================
 // =======================
-require('./app/routes.js')(app, User, Contest, Project, Intention)
-require('./app/routes/contestRoutes.js')(app, Contest, Images_Contest, Intention, Project, Comment)
-require('./app/routes/projectRoutes.js')(app, Project, Images_Project)
+require('./app/routes.js')(app, User, Contest, Project, Intention);
+require('./app/routes/contestRoutes.js')(app, Contest, Images_Contest, Intention, Project, Comment);
+require('./app/routes/projectRoutes.js')(app, Project, Images_Project, User, Contest);
 
 
 app.use(function(req, res) {

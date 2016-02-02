@@ -29,6 +29,15 @@
 	background-color: white;
 }
 
+.uploaded-image{
+	border: solid 4px #FFFFFF;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+	display: inline-block;
+	line-height: 0;
+	max-width: 100%;
+	transition: all 200ms ease-out;
+}
+
 .comment{
 	border: 1px solid #608c28;
 	padding: 10px;

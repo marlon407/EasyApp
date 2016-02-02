@@ -7,13 +7,17 @@
 	</div>
 	
 	<div class="row gorup">
-			<div class="large-4 smal-12 header columns">
-				<h3>Detalhes</h3>
+			<div class="large-4 smal-12 header columns project_info">
+				<h4>Projeto proposto por:</h4>
+				<h5><i><a href="/perfil/{{designer.name}}">  {{designer.name}}</a></i></h5>
+				<h4>Participando da competição:</h4>
+				<h5><i><a href="/competicoes/{{contest._id}}">  {{contest.title}}</a></i></h5>
+				
 			</div>
-			<div class="large-8 small-12 desc columns">
-				<h4>Descrição:</h4>
+			<div class="large-8 small-12 desc columns project_desc">
+				<h3>Descrição:</h3>
 				<p>{{project.description}}</p>
-				<h4>Projeto:</h4>
+				<h3>Projeto:</h3>
 				<ul class="small-block-grid-3 medium-block-grid-3 large-block-grid-1 images-grid"></ul>
 			</div>
 		</div>

@@ -95,3 +95,15 @@
 .new-project .list-in-grid img{
 	max-width: 600px;
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 630px){
+	
+	.project .header-info .info h1{
+		font-size: 30px;
+	}
+	
+	.project-detail hr{
+		margin: 30px auto;
+	}
+	
+}

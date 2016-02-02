@@ -1,4 +1,4 @@
-module.exports = function(app, Project, Images_Project) {
+module.exports = function(app, Project, Images_Project, User, Contest) {
 	app.post('/uploadProject', function(req, res) {
 		var project = new Project({
 			title: req.body.title,
@@ -31,8 +31,14 @@ module.exports = function(app, Project, Images_Project) {
 	app.get('/getProjectById', function(req, res) {
 		var projectId = req.headers['id']
     Project.find({_id: projectId},function(err, project) {
+			console.log(project);
 			Images_Project.find({project_id: projectId},function(err, images) {
-				res.json({project:project, images:images});
+				User.find({_id: project[0].user_id}, function(error, user){
+					console.log(user);
+					Contest.find({_id:project[0].contest_id}, function(error, contest){
+						res.json({project:project, images:images, user:user, contest:contest});
+					});
+				});
 			})
     });
 	});

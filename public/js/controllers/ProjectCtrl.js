@@ -60,7 +60,10 @@ angular.module('ProjectCtrl', [])
 			$scope.showProject = function(){
 				$window.scrollTo(0, 0); 
 				Project.getProjectById($routeParams.id).then(function(response){
+					console.log(response.data)
 					$scope.project = response.data.project[0];
+					$scope.contest = response.data.contest[0];
+					$scope.designer = response.data.user[0];
 					QB.createSession(QBUser, function(err, result) {
 							if (err) {
 								console.log('Something went wrong: ' + err);

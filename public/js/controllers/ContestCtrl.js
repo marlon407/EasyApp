@@ -145,7 +145,7 @@ angular.module('ContestCtrl', [])
 							} else {
 								for(var i = 0; i< response.data.images.length; i++){
 									var path = QB.content.privateUrl(response.data.images[i].image_id+"/download");
-									var imageHTML = "<li><a target='_blank' href='"+path+"' data-lightbox='image-1' data-title='My caption'><img src='"+path+"'></a></li>"
+									var imageHTML = "<li><a target='_blank' class='uploaded-image' href='"+path+"'><img src='"+path+"'></a></li>"
 									$('.images-grid').append(imageHTML);
 								}
 							}
