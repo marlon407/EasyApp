@@ -97,10 +97,11 @@ angular.module('ContestCtrl', [])
 								if (err) {
 									console.log(err);
 								} else {
+									console.log(img_response);
 									document.getElementById(inputFile.type+inputFile.size).parentElement.remove();
-									var path = QB.content.privateUrl(response.data.images[i].image_id+"/download");
-									var imageHTML = "<li><a target='_blank' href='"+path+"' data-lightbox='image-1' data-title='My caption'><img src='"+path+"'></a></li>"
-									$('.images-grid').append(imageHTML);
+									var path = QB.content.privateUrl(img_response.id+"/download");
+									var imageHTML = "<li class='list-in-grid'><img src='" + QB.content.privateUrl(img_response.id+"/download") + "' /></li>";
+									$(".images-area").append(imageHTML);
 									$scope.image_ids.push(img_response.id);
 								}
 							});

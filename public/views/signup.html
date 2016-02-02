@@ -1,7 +1,10 @@
 <div class="row login-page login-signup" ng-init="loadSignup()">
-	<div class="large-6 columns large-offset-3">
+	<div class="large-6 medium-6 columns large-offset-3 medium-offset-3">
 		<div data-alert class="alert-box warning" ng-show="userTaken != undefined">
 			{{userTaken}}
+		</div>
+		<div data-alert class="alert-box warning" ng-show="error != undefined">
+			{{error}}
 		</div>
     <h1 class="text-center"><span class="fa fa-sign-in"></span> Registrar-se</h1>    <!-- LOGIN FORM -->
 		<div class="form-group">
@@ -20,11 +23,11 @@
 				<input type="password" placeholder="Sua senha" class="form-control" ng-model="user.password" name="password">
 		</div>
 		<ul class="options row">
-			<li class="large-6 small-12 columns">
+			<li class="large-6 small-12 columns role-buttons">
 					<input type="radio" name="option" ng-model="user.role" value="1" checked/>
 					<label for="contest.duration">Sou um designer</label>
 			</li>
-			<li class="large-6 small-12 columns">
+			<li class="large-6 small-12 columns role-buttons">
 					<input type="radio" name="option" ng-model="user.role" value="0"/>
 					<label for="contest.duration">Sou um usúario</label>
 			</li>

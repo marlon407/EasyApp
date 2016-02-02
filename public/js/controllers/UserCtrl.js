@@ -75,18 +75,25 @@ angular.module('UserCtrl', [])
 		}
 		
 		$scope.create = function(){
-			User.createUser($scope.user).then(function (response) {
-				if(response.data.success){
-					doAuthentication($scope.user, "perfil/edit/"+$scope.user.name);
-				}
-				else {
-					console.log("nao criou usuario");
-					$scope.userTaken = "Nome de usuário já cadastrado! Por favor escolha outro.";
-				}
-			});
+			console.log($scope.user);
+			if($scope.user.email == undefined || $scope.user.name == undefined || $scope.user.password == undefined){
+				$scope.error = "Por favor preencha todos os campos";
+			}
+			else{
+				User.createUser($scope.user).then(function (response) {
+					if(response.data.success){
+						doAuthentication($scope.user, "perfil/edit/"+$scope.user.name);
+					}
+					else {
+						console.log("nao criou usuario");
+						$scope.userTaken = "Nome de usuário já cadastrado! Por favor escolha outro.";
+					}
+				});
+			}
 		}
 		
 		$scope.loadSignup = function(){
+			$scope.user.role = 0;
 			$window.scrollTo(0, 0);
 		}
 		

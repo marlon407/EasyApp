@@ -31,6 +31,20 @@ ul{
 	font-family: 'PT Sans' !important;
 }
 
+.hero .info h3{
+	margin-bottom: 80px;
+}
+
+.hero .info .singup-hero {
+	margin-left: 10px;
+	background-color: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+}
+.hero .info .singup-hero:hover {
+	background-color: #5bbc2e;
+	border-color: #5bbc2e;
+}
 .home .section{
 	min-height: 420px;
 	height: auto;
@@ -248,12 +262,16 @@ ul{
 	}
 	
 	.hero .info {
-		padding: 100px 15px;
-	}
+		padding: 50px 15px;}
+	
+	.hero .info h3{
+		margin-bottom: 30px;}
+	
+	.hero .info .singup-hero{
+		margin: 0;}
 	
 	.features .columns {
-		margin-bottom: 70px;
-	}
+		margin-bottom: 70px;}
 	.footer{
 		padding: 0;
 	}
